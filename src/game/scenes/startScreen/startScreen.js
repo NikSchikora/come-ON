@@ -1,0 +1,53 @@
+import Phaser from "../../engine/phaser.js";
+
+let blinkingInterval;
+
+export default class StartScreen extends Phaser.Scene {
+
+    preload() {
+        this.load.image("bg", "/startScene/bg.png");
+        this.load.image("logo", "/startScene/titelbild_groesser.png");
+        this.load.image("enter", "/startScene/press_enter.png");
+    }
+
+    create() {
+        let centerX = this.cameras.main.centerX;
+        let centerY = this.cameras.main.centerY;
+        this.add.image(centerX, centerY, "bg");
+        this.add.image(
+            centerX + 25,
+            centerY - 130,
+            "logo"
+        );
+
+        let enter = this.add.image(
+            centerX,
+            centerY + 180,
+            "enter"
+        ).setScale(1.1, 1.1);
+
+
+        let enterVisible = true;
+        blinkingInterval = setInterval(blink, 1000);
+
+        function blink() {
+            if (enterVisible) {
+                enter.visible = false;
+                enterVisible = false;
+            }
+            else {
+                enter.visible = true;
+                enterVisible = true;
+            }
+        }
+    }
+
+    update() {
+        let enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+
+        if (enterKey.isDown) {
+            clearInterval(blinkingInterval);
+            this.scene.start('playerSelection');
+        }
+    }
+}

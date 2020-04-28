@@ -1,0 +1,16 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #262626;
+}
+
+#main {
+    margin-top: 5rem;
+    width: 100%;
+    text-align: center;
+}
+
+#game-container {
+    display: inline-block;
+    transform-origin: center;
+}

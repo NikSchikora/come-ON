@@ -1,0 +1,17 @@
+{
+  "name": "comeon-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cp -R ./src/assets/ ./dist/ && parcel index.html --open",
+    "build": "cp -R ./src/assets/ ./dist/ parcel build index.html",
+    "refresh-assets": "cp -R ./src/assets/ ./dist/ && echo 'Updated successfully!'"
+  },
+  "author": "Niklas Schikora",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4",
+    "phaser": "^3.23.0"
+  }
+}
