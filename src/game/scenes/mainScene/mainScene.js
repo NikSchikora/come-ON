@@ -1,9 +1,10 @@
 import Phaser from "../../engine/phaser.js";
+import Player from "../../chars/player.js";
 
 export default class MainScene extends Phaser.Scene {
 
     preload() {
-        this.load.spritesheet("player_fem", "mainScene/char_fem.png", {
+        this.load.spritesheet("player", "mainScene/char_fem.png", {
             frameWidth: 208,
             frameHeight: 384,
         });
@@ -35,53 +36,23 @@ export default class MainScene extends Phaser.Scene {
 
         const spawnPoint = map.findObject("PersonObject", obj => obj.name === "StartingPoint");
 
-        this.cameras.main.setZoom(2);
 
-        let player = this.physics.add
-            .sprite(spawnPoint.x, spawnPoint.y, "player_fem")
-            .setScale(0.08, 0.08);
-        this.player = player;
+        this.player = new Player(this, spawnPoint.x, spawnPoint.y);
 
-        this.physics.add.collider(this.player, buildingsLayer);
-        this.physics.add.collider(this.player, dhbwLayer);
-        this.physics.add.collider(this.player, decoLayer1);
-        this.physics.add.collider(this.player, decoLayer2);
-        this.physics.add.collider(this.player, firstBorder);
-        this.physics.add.collider(this.player, overflowLayer);
-
-        //Animations from Sprite
-        const anims = this.anims;
-        anims.create({
-            key: "fem_right",
-            frames: anims.generateFrameNumbers("player_fem", { start: 0, end: 1 }),
-            frameRate: 5,
-            repeat: 0,
-        });
-        anims.create({
-            key: "fem_left",
-            frames: anims.generateFrameNumbers("player_fem", { start: 2, end: 3 }),
-            frameRate: 5,
-            repeat: 0,
-        });
-        anims.create({
-            key: "fem_front",
-            frames: anims.generateFrameNumbers("player_fem", { start: 4, end: 5 }),
-            frameRate: 5,
-            repeat: 0,
-        });
-        anims.create({
-            key: "fem_back",
-            frames: anims.generateFrameNumbers("player_fem", { start: 6, end: 7 }),
-            frameRate: 5,
-            repeat: 0,
-        });
         const camera = this.cameras.main;
-        camera.startFollow(this.player);
+        camera.startFollow(this.player.sprite);
         camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
+        this.physics.add.collider(this.player.sprite, buildingsLayer);
+        this.physics.add.collider(this.player.sprite, dhbwLayer);
+        this.physics.add.collider(this.player.sprite, decoLayer1);
+        this.physics.add.collider(this.player.sprite, decoLayer2);
+        this.physics.add.collider(this.player.sprite, firstBorder);
+        this.physics.add.collider(this.player.sprite, overflowLayer);
     }
 
     update() {
-
+        this.player.update();
     }
 
 }

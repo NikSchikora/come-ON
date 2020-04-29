@@ -47,7 +47,7 @@ export default class StartScreen extends Phaser.Scene {
 
         if (enterKey.isDown) {
             clearInterval(blinkingInterval);
-            this.scene.start('playerSelection');
+            this.scene.start('playerSelector');
         }
     }
 }
