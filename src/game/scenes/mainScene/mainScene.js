@@ -3,12 +3,15 @@ import Player from "../../chars/player.js";
 
 export default class MainScene extends Phaser.Scene {
 
-    preload() {
-        this.load.spritesheet("player", "mainScene/char_fem.png", {
-            frameWidth: 208,
-            frameHeight: 384,
-        });
+    init(data) {
+        this.playerSprite = data.player;
+    }
 
+    preload() {
+        this.load.spritesheet("player", "mainScene/" + this.playerSprite + ".png", {
+            frameWidth: 95,
+            frameHeight: 176,
+        });
         this.load.tilemapTiledJSON("map-data", "mainScene/map/Map2.json");
         this.load.image("tileset", "mainScene/map/TileSheet32.png");
     }
@@ -42,6 +45,7 @@ export default class MainScene extends Phaser.Scene {
         const camera = this.cameras.main;
         camera.startFollow(this.player.sprite);
         camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+        camera.setZoom(1.5);
 
         this.physics.add.collider(this.player.sprite, buildingsLayer);
         this.physics.add.collider(this.player.sprite, dhbwLayer);

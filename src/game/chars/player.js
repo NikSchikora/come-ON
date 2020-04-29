@@ -9,30 +9,30 @@ export default class Player {
 
         anims.create({
             key: "walk-right",
-            frames: anims.generateFrameNumbers("player", { start: 0, end: 1 }),
-            frameRate: 5,
+            frames: anims.generateFrameNumbers("player", { start: 0, end: 2 }),
+            frameRate: 7,
             repeat: 0,
         });
         anims.create({
             key: "walk-left",
-            frames: anims.generateFrameNumbers("player", { start: 2, end: 3 }),
-            frameRate: 5,
+            frames: anims.generateFrameNumbers("player", { start: 3, end: 5 }),
+            frameRate: 7,
             repeat: 0,
         });
         anims.create({
             key: "walk-front",
-            frames: anims.generateFrameNumbers("player", { start: 4, end: 5 }),
-            frameRate: 5,
+            frames: anims.generateFrameNumbers("player", { start: 6, end: 8 }),
+            frameRate: 7,
             repeat: 0,
         });
         anims.create({
             key: "walk-back",
-            frames: anims.generateFrameNumbers("player", { start: 6, end: 7 }),
-            frameRate: 5,
+            frames: anims.generateFrameNumbers("player", { start: 9, end: 11 }),
+            frameRate: 7,
             repeat: 0,
         });
 
-        this.sprite = scene.physics.add.sprite(x, y, "player", 0).setScale(.09, .09);
+        this.sprite = scene.physics.add.sprite(x, y, "player", 0).setScale(.22, .22);
 
         this.keys = scene.input.keyboard.createCursorKeys();
 

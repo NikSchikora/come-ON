@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "cp -R ./src/assets/ ./dist/ && parcel index.html --open",
-    "build": "cp -R ./src/assets/ ./dist/ parcel build index.html",
+    "build": "cp -R ./src/assets/ ./dist/ && parcel build index.html",
     "refresh-assets": "cp -R ./src/assets/ ./dist/ && echo 'Updated successfully!'"
   },
   "author": "Niklas Schikora",

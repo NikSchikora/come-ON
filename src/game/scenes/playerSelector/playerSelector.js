@@ -100,8 +100,7 @@ export default class PlayerSelector extends Phaser.Scene {
         let cursors = this.cursors;
 
         if (cursors.space.isDown) {
-            console.log("hallo");
-            this.scene.start("mainScene");
+            this.scene.start("mainScene", { player: "char1" });
         }
 
         if (Phaser.Input.Keyboard.JustDown(cursors.right)) {
