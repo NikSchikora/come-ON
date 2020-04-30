@@ -11,7 +11,6 @@ export default class PlayerSelector extends Phaser.Scene {
         this.load.image("enter", "playerSelector/press_enter.png");
 
         //Player-Previews
-        this.load.image("player_wirth", "playerSelector/players/prev_wirth.png");
         this.load.image("player_male", "playerSelector/players/prev_male.png");
         this.load.image(
             "player_female",
@@ -42,15 +41,6 @@ export default class PlayerSelector extends Phaser.Scene {
                     this.cameras.main.centerX + 300,
                     this.cameras.main.centerY + 40,
                     "player_female"
-                )
-                .setScale(0.6, 0.6)
-        );
-        this.players.push(
-            this.add
-                .image(
-                    this.cameras.main.centerX + 600,
-                    this.cameras.main.centerY + 40,
-                    "player_wirth"
                 )
                 .setScale(0.6, 0.6)
         );
@@ -100,7 +90,8 @@ export default class PlayerSelector extends Phaser.Scene {
         let cursors = this.cursors;
 
         if (cursors.space.isDown) {
-            this.scene.start("mainScene", { player: "char1" });
+            this.scene.start("mainScene", { player: "char" + (currentShown + 1) });
+            console.log("char: " + (currentShown + 1));
         }
 
         if (Phaser.Input.Keyboard.JustDown(cursors.right)) {

@@ -28,8 +28,8 @@ export default class MainScene extends Phaser.Scene {
         const dhbwLayer = map.createStaticLayer("DHBW", tileset, 0, 0);
         const decoLayer1 = map.createStaticLayer("Deco1", tileset, 0, 0);
         const decoLayer2 = map.createStaticLayer("Deco2", tileset, 0, 0);
-        const firstBorder = map.createStaticLayer("firstBorder", tileset, 0, 0);
         const overflowLayer = map.createStaticLayer("Overflow", tileset, 0, 0);
+        const firstBorder = map.createStaticLayer("firstBorder", tileset, 0, 0);
         buildingsLayer.setCollisionByProperty({ collides: true });
         dhbwLayer.setCollisionByProperty({ collides: true });
         decoLayer1.setCollisionByProperty({ collides: true });
