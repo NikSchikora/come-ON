@@ -4,6 +4,7 @@ export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
     this.activeMission = null;
+    this.collectedObjects = [];
     const anims = scene.anims;
 
     anims.create({
@@ -70,14 +71,19 @@ export default class Player {
     } else {
       player.anims.stop();
     }
+
+    if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
+      console.log("Hallo");
+      this.loadMission();
+    }
   }
 
-  startMission(missionName) {
-    fetch("assets/missions/" + missionName + ".json")
-      .then((response) => response.json())
-      .then((json) => {
-        this.activeMission = new Mission(json, this.scene);
-        console.log("Active Mission set to" + missionName + "!");
-      });
+  loadMission() {
+    let data = this.scene.cache.json.get("exampleMission");
+    this.activeMission = new Mission(data, this.scene, this);
+  }
+
+  getCurrentMission() {
+    return this.activeMission;
   }
 }
