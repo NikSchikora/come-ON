@@ -37,6 +37,7 @@ export default class Player {
       .setScale(0.22, 0.22);
 
     this.keys = scene.input.keyboard.createCursorKeys();
+    this.loadMission();
   }
 
   update() {
@@ -73,17 +74,28 @@ export default class Player {
     }
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
-      console.log("Hallo");
-      this.loadMission();
+      if (this.getDistanceSquared() <= 1000) {
+        console.log("hallo");
+      }
     }
   }
 
   loadMission() {
     let data = this.scene.cache.json.get("exampleMission");
     this.activeMission = new Mission(data, this.scene, this);
+    this.activeMission.preload();
+    console.log("afasd");
+    console.log(this.activeMission.currentState);
   }
 
   getCurrentMission() {
     return this.activeMission;
+  }
+
+  getDistanceSquared() {
+    let object = this.activeMission.objectSprite;
+    let xDif = this.sprite.x - object.x;
+    let yDif = this.sprite.y - object.y;
+    return xDif * xDif + yDif * yDif;
   }
 }

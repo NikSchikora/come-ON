@@ -1,6 +1,6 @@
 import Phaser from "../engine/phaser.js";
 
-let sequence, respondingChar, object, currentState;
+let sequence, respondingChar, object;
 
 export default class Mission {
   constructor(data, scene, player) {
@@ -10,20 +10,24 @@ export default class Mission {
     sequence = data["sequence"];
     respondingChar = data["respondingChar"];
     object = data["object"];
-    currentState = sequence[0];
+    this.currentState = sequence[0];
   }
 
   preload() {
-    this.scene.load.image(data["name"] + "Object", object["sprite"]);
+    this.scene.load.image(
+      this.missionData["name"] + "Object",
+      object["sprite"]
+    );
+    console.log(this.missionData["name"] + "Object" + object["sprite"]);
+    this.initializeMission();
   }
 
   initializeMission() {
     //Add Object-Image
-    this.scene.add.image(
-      object["positionX"],
-      object["positionY"],
-      this.missionData["name"] + "Object"
-    );
+    this.objectSprite = this.scene.add
+      .image(object["X"], object["Y"], this.missionData["name"] + "Object")
+      .setScale(0.06, 0.06);
+    console.log(this.missionData["name"] + "Object");
   }
 
   runSequence() {}

@@ -1,0 +1,34 @@
+{
+  "name": "exampleMission",
+  "version": "0.1",
+  "sequence": ["intro", "middle", "complete"],
+  "respondingChar": {
+    "name": "Mester",
+    "positionX": 250,
+    "positionY": 250,
+    "charPath": "assets/npc/mester.png",
+    "dialogues": {
+      "intro": [
+        "Hallo dies ist ein Testdialog",
+        "Mein Name ist Arnulf Mester und ich bin der DHBW-Meister",
+        "Ich finde Chatbots super toll!",
+        "Ahhham"
+      ],
+      "middle": [
+        "Dies ist der mitteldialog zwischen beginn und abschließen der Quest",
+        "Ist ja auch nur ein beispiel, was soll hier schon groß stehen ...",
+        "Joa."
+      ],
+      "complete": [
+        "JAAA du hast die Quest abgeschlossen",
+        "MEEEGA geil hey",
+        "Dafür bekommst du ne 1 in WebIT!"
+      ]
+    }
+  },
+  "object": {
+    "sprite": "missions/exampleMission/sprite.jpg",
+    "X": 2059,
+    "Y": 2583
+  }
+}

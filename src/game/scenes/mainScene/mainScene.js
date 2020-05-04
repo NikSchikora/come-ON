@@ -1,5 +1,6 @@
 import Phaser from "../../engine/phaser.js";
 import Player from "../../chars/player.js";
+import MissionLoader from "../../../assets/missions/missionLoader.js";
 
 export default class MainScene extends Phaser.Scene {
   init(data) {
@@ -13,7 +14,10 @@ export default class MainScene extends Phaser.Scene {
     });
     this.load.tilemapTiledJSON("map-data", "mainScene/map/Map2.json");
     this.load.image("tileset", "mainScene/map/TileSheet32.png");
-    this.load.json("exampleMission", "missions/exampleMission.json");
+
+    //Load missions via MissionLoader
+    this.loader = new MissionLoader(this);
+    this.loader.preload();
   }
 
   create() {
@@ -41,6 +45,7 @@ export default class MainScene extends Phaser.Scene {
       "PersonObject",
       (obj) => obj.name === "StartingPoint"
     );
+    console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
 
     this.player = new Player(this, spawnPoint.x, spawnPoint.y);
 
