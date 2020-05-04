@@ -15,12 +15,3 @@ body {
     transform-origin: center;
 }
 
-#speech{
-    text-align: center;
-    margin-bottom: 500px;
-}
-
-#myCanvas{
-    position: relative;
-    top: -135px;
-}
