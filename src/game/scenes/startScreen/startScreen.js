@@ -8,6 +8,7 @@ export default class StartScreen extends Phaser.Scene {
         this.load.image("bg", "/startScene/bg.png");
         this.load.image("logo", "/startScene/titelbild_groesser.png");
         this.load.image("enter", "/startScene/press_enter.png");
+        this.load.audio("startMusic", "../../../assets/startScene/Borderless.mp3");
     }
 
     create() {
@@ -19,6 +20,9 @@ export default class StartScreen extends Phaser.Scene {
             centerY - 130,
             "logo"
         );
+
+        let sfx = this.sound.add('startMusic');
+        sfx.play();
 
         let enter = this.add.image(
             centerX,
