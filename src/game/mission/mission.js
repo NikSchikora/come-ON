@@ -26,7 +26,7 @@ export default class Mission {
     //Add Object-Image
     this.objectSprite = this.scene.add
       .image(object["X"], object["Y"], this.missionData["name"] + "Object")
-      .setScale(0.06, 0.06);
+      .setScale(0.3, 0.3);
     console.log(this.missionData["name"] + "Object");
   }
 
