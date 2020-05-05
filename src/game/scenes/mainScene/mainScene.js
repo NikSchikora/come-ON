@@ -1,6 +1,6 @@
 import Phaser from "../../engine/phaser.js";
 import Player from "../../chars/player.js";
-import MissionLoader from "../../../assets/missions/missionLoader.js";
+import MissionLoader from "../../mission/missionLoader.js";
 
 export default class MainScene extends Phaser.Scene {
   init(data) {
@@ -18,6 +18,7 @@ export default class MainScene extends Phaser.Scene {
     //Load missions via MissionLoader
     this.loader = new MissionLoader(this);
     this.loader.preload();
+    this.npcs = [];
   }
 
   create() {
@@ -60,6 +61,8 @@ export default class MainScene extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, decoLayer2);
     this.physics.add.collider(this.player.sprite, firstBorder);
     this.physics.add.collider(this.player.sprite, overflowLayer);
+
+    this.loader.create();
   }
 
   update() {

@@ -74,6 +74,7 @@ export default class Player {
     }
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
+      console.log(player.body.x + ":" + player.body.y);
       if (this.getDistanceSquared() <= 1000) {
         this.collectedObjects.push(this.activeMission.objectSprite);
         this.activeMission.objectSprite.destroy();
@@ -82,10 +83,9 @@ export default class Player {
   }
 
   loadMission() {
-    let data = this.scene.cache.json.get("exampleMission");
+    let data = this.scene.cache.json.get("exampleMissionData");
     this.activeMission = new Mission(data, this.scene, this);
-    this.activeMission.preload();
-    console.log("afasd");
+    this.activeMission.initializeMission();
     console.log(this.activeMission.currentState);
   }
 
