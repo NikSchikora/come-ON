@@ -5,7 +5,7 @@ let blinkingInterval;
 export default class StartScreen extends Phaser.Scene {
 
     preload() {
-        this.load.image("bg", "/startScene/bgAdjusted.png");
+        this.load.image("bg", "../../../assets/startScene/bgAdjusted.png");
         this.load.image("logo", "/startScene/titelbild_groesser.png");
         this.load.image("enter", "/startScene/press_enter.png");
         this.load.audio("startMusic", "../../../assets/startScene/Procession.mp3");
