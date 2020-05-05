@@ -8,6 +8,7 @@ export default class StartScreen extends Phaser.Scene {
         this.load.image("bg", "/startScene/bg.png");
         this.load.image("logo", "/startScene/titelbild_groesser.png");
         this.load.image("enter", "/startScene/press_enter.png");
+        this.load.audio("startMusic", "../../../assets/startScene/Procession.mp3");
     }
 
     create() {
@@ -20,6 +21,19 @@ export default class StartScreen extends Phaser.Scene {
             "logo"
         );
 
+        this.sfx = this.sound.add('startMusic', 
+        {
+            mute: false,
+            volume: 0.1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        });
+
+        this.sfx.play();
+ 
         let enter = this.add.image(
             centerX,
             centerY + 180,
@@ -43,11 +57,14 @@ export default class StartScreen extends Phaser.Scene {
     }
 
     update() {
-        let enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);
+        let enterKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ENTER);  
 
         if (enterKey.isDown) {
             clearInterval(blinkingInterval);
             this.scene.start('playerSelector');
+            this.sfx.stop();
         }
+
+        
     }
 }
