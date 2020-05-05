@@ -83,6 +83,7 @@ export default class PlayerSelector extends Phaser.Scene {
             }
         }
 
+        
     }
     update() {
         let players = this.players;

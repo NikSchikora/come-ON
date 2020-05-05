@@ -14,9 +14,25 @@ export default class MainScene extends Phaser.Scene {
         });
         this.load.tilemapTiledJSON("map-data", "mainScene/map/Map2.json");
         this.load.image("tileset", "mainScene/map/TileSheet32.png");
+        this.load.audio("startMusic", "../../../assets/startScene/No_Good_Right.mp3");
     }
 
     create() {
+
+
+        this.sfx = this.sound.add('startMusic', 
+        {
+            mute: false,
+            volume: 0.1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: true,
+            delay: 0
+        });
+
+        this.sfx.play();
+
         this.cameras.main.roundPixels = true;
 
         const map = this.make.tilemap({ key: "map-data" });
