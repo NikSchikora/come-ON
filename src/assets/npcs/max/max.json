@@ -1,0 +1,13 @@
+{
+    "name": "max",
+    "x": 1691,
+    "y": 2720,
+    "sprite": "npcs/mester/max.png",
+    "dialogue": [
+      "Test1",
+      "anderer teil vom Dialog her",
+      "Hier stehen dann sachen oder so",
+      "idk at all"
+    ]
+  }
+  
