@@ -6,6 +6,7 @@ const npcs = ["mester"];
 export default class MissionLoader {
   constructor(scene) {
     this.scene = scene;
+    this.npcList = [];
   }
 
   preload() {
@@ -37,6 +38,17 @@ export default class MissionLoader {
       let data = this.scene.cache.json.get(npc + "Data");
       console.log(data);
       let char = new NPC(this.scene, data);
+      this.npcList.push(char);
     }, this);
+  }
+
+  getNpcByName(name) {
+    let retValue = null;
+    this.npcList.forEach(function (iteration) {
+      if ((iteration.data.name = name)) {
+        retValue = iteration;
+      }
+    }, this);
+    return retValue;
   }
 }

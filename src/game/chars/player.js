@@ -75,10 +75,22 @@ export default class Player {
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
       console.log(player.body.x + ":" + player.body.y);
-      if (this.getDistanceSquared() <= 1000) {
+      if (this.getDistanceSquared(this.activeMission.objectSprite) <= 1000) {
         this.collectedObjects.push(this.activeMission.objectSprite);
         this.activeMission.objectSprite.destroy();
       }
+      this.scene.loader.npcList.forEach(function (iteration) {
+        if (this.getDistanceSquared(iteration.sprite) <= 1000) {
+          console.log(iteration.data.name);
+          if (
+            iteration.data.name == this.activeMission.data.respondingChar.name
+          ) {
+            if (this.collectedObjects.length > 0) {
+              console.log("saf");
+            }
+          }
+        }
+      }, this);
     }
   }
 
@@ -93,8 +105,7 @@ export default class Player {
     return this.activeMission;
   }
 
-  getDistanceSquared() {
-    let object = this.activeMission.objectSprite;
+  getDistanceSquared(object) {
     let xDif = this.sprite.x - object.x;
     let yDif = this.sprite.y - object.y;
     return xDif * xDif + yDif * yDif;

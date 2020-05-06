@@ -3,7 +3,8 @@
   "version": "0.1",
   "sequence": ["intro", "middle", "complete"],
   "respondingChar": {
-    "name": "Mester",
+    "name": "mester",
+    "displayName": "Mester",
     "positionX": 250,
     "positionY": 250,
     "charPath": "assets/npc/mester.png",

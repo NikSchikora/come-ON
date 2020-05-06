@@ -5,7 +5,7 @@ let sequence, object;
 export default class Mission {
   constructor(data, scene, player) {
     this.scene = scene;
-    this.missionData = data;
+    this.data = data;
     this.player = player;
     sequence = data["sequence"];
     object = data["object"];
@@ -15,9 +15,9 @@ export default class Mission {
   initializeMission() {
     //Add Object-Image
     this.objectSprite = this.scene.add
-      .image(object["X"], object["Y"], this.missionData["name"] + "Sprite")
+      .image(object["X"], object["Y"], this.data["name"] + "Sprite")
       .setScale(0.3, 0.3);
-    console.log(this.missionData["name"] + "Object");
+    console.log(this.data["name"] + "Object");
   }
 
   runSequence() {}
