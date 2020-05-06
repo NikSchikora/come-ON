@@ -1,6 +1,7 @@
 import Phaser from "../../engine/phaser.js";
 import Player from "../../chars/player.js";
 import MissionLoader from "../../mission/missionLoader.js";
+import Dialogue from "../../dialogues/dialogues.js";
 
 export default class MainScene extends Phaser.Scene {
   init(data) {
@@ -92,6 +93,7 @@ export default class MainScene extends Phaser.Scene {
     this.loader = new MissionLoader(this);
     this.loader.preload();
     this.npcs = [];
+    this.speechManager = new Dialogue(this);
   }
 
   create() {
@@ -136,6 +138,13 @@ export default class MainScene extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, overflowLayer);
 
     this.loader.create();
+    this.speechManager.createSpeechBubble(
+      spawnPoint.x,
+      spawnPoint.y,
+      50,
+      30,
+      "Hallo"
+    );
   }
 
   update() {
