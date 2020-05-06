@@ -8,8 +8,18 @@ export default class Dialogue {
   }
 
   createSpeechBubble(x, y, width, height, quote) {
-    var bubbleWidth = width;
-    var bubbleHeight = height;
+    var maxWidth = 150;
+    var charakters = quote.length;
+
+    var bLenght = charakters * 5;
+    var bHeight = 30;
+    if (bLenght > maxWidth) {
+      bLenght = maxWidth;
+      bHeight += 30;
+    }
+
+    var bubbleWidth = bLenght;
+    var bubbleHeight = bHeight;
     var bubblePadding = 10;
     var arrowHeight = bubbleHeight / 4;
 
@@ -49,7 +59,7 @@ export default class Dialogue {
 
     var content = this.scene.add.text(0, 0, quote, {
       fontFamily: "Arial",
-      fontSize: 20,
+      fontSize: 10,
       color: "#000000",
       align: "center",
       wordWrap: { width: bubbleWidth - bubblePadding * 2 },

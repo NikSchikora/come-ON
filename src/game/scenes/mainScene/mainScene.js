@@ -83,7 +83,7 @@ export default class MainScene extends Phaser.Scene {
       spawnPoint.y,
       50,
       30,
-      "Hallo"
+      "Hallo dies ist nur eine Test-Scene, hier stehen nur Tests kflasldpgkfapüd jpgoaskdk  asopdl "
     );
   }
 
