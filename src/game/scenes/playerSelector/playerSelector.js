@@ -8,6 +8,7 @@ export default class PlayerSelector extends Phaser.Scene {
     this.load.image("select", "playerSelector/bg_select.png");
     this.load.image("arrow", "playerSelector/arrow.png");
     this.load.image("enter", "playerSelector/press_enter.png");
+    
 
     //Player-Previews
     this.load.image("player_male", "playerSelector/players/prev_male.png");
@@ -17,9 +18,24 @@ export default class PlayerSelector extends Phaser.Scene {
     this.currentShown = 0;
     this.rightButton = null;
     this.leftButton = null;
+
+    this.load.audio("selectAudio", "startScene/Soaring_High.mp3")
   }
 
   create() {
+
+    this.sfx2 = this.sound.add("selectAudio", {
+      mute: false,
+      volume: 0.1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0,
+    });
+
+    this.sfx2.play();
+
     this.add.image(0, 0, "background").setOrigin(0, 0);
     this.players.push(
       this.add
