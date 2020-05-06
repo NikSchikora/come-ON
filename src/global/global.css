@@ -2,6 +2,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: #262626;
+    color: white;
 }
 
 #main {
@@ -13,4 +14,21 @@ body {
 #game-container {
     display: inline-block;
     transform-origin: center;
+}
+
+ul {
+     padding-left: 0; 
+}
+
+h2 {
+    background-color: #CCE4C3;
+    color: #405242;
+}
+
+#border {
+color: #28554E;
+}
+
+#inventar {
+    position: absolute;
 }
