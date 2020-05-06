@@ -9,20 +9,20 @@
       "charPath": "assets/npc/donna.png",
       "dialogues": {
         "intro": [
-          "Hallo dies ist ein Testdialog",
-          "Mein Name ist Arnulf Mester und ich bin der DHBW-Meister",
-          "Ich finde Chatbots super toll!",
-          "Ahhham"
+          "Hi, ich bin Donna",
+          "Dich hab ich hier ja noch nie gesehen.",
+          "Bring mir meinen Fuchs, dann führe ich dich hier ein wenig herum",
+          
         ],
         "middle": [
-          "Dies ist der mitteldialog zwischen beginn und abschließen der Quest",
-          "Ist ja auch nur ein beispiel, was soll hier schon groß stehen ...",
-          "Joa."
+          "Kein Fuchs, keine Tour",
+          "Und die Tour wäre schon sehr exklusiv.",
+          "Ich würde sie mir nicht entgehen lassen."
         ],
         "complete": [
-          "JAAA du hast die Quest abgeschlossen",
-          "MEEEGA geil hey",
-          "Dafür bekommst du ne 1 in WebIT!"
+          "Yei, mein Fuchs!",
+          "Danke.",
+          "Ich bin eigentlich auch erst vor kurzem hergezogen. Schau dich also liber selber um oder frag einen anderen."
         ]
       }
     },

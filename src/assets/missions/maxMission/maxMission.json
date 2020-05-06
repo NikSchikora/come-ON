@@ -9,20 +9,14 @@
     "charPath": "assets/npc/mester.png",
     "dialogues": {
       "intro": [
-        "Hallo dies ist ein Testdialog",
-        "Mein Name ist Arnulf Mester und ich bin der DHBW-Meister",
-        "Ich finde Chatbots super toll!",
-        "Ahhham"
+        "Hallo, Max hier",
+        "Hab mich verlaufen"
       ],
       "middle": [
-        "Dies ist der mitteldialog zwischen beginn und abschließen der Quest",
-        "Ist ja auch nur ein beispiel, was soll hier schon groß stehen ...",
-        "Joa."
+        "hm...wo bin ich hier nochmal?"
       ],
       "complete": [
-        "JAAA du hast die Quest abgeschlossen",
-        "MEEEGA geil hey",
-        "Dafür bekommst du ne 1 in WebIT!"
+        "Cool.Danke. Jetzt muss ich nur noch herausfinden, wo ich auf der Karte bin...."
       ]
     }
   },

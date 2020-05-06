@@ -9,20 +9,16 @@
       "charPath": "assets/npc/wirt.png",
       "dialogues": {
         "intro": [
-          "Hallo dies ist ein Testdialog",
-          "Mein Name ist Arnulf Mester und ich bin der DHBW-Meister",
-          "Ich finde Chatbots super toll!",
-          "Ahhham"
+          "Servus!",
+          "Ich bin der Wirt dieses schönen Dörfchens.",
+          "Genieß dein Zeit hier...",
+          "..und komm gerne mal auf einen Krug Bier vorbei!"
         ],
         "middle": [
-          "Dies ist der mitteldialog zwischen beginn und abschließen der Quest",
-          "Ist ja auch nur ein beispiel, was soll hier schon groß stehen ...",
-          "Joa."
+          ""
         ],
         "complete": [
-          "JAAA du hast die Quest abgeschlossen",
-          "MEEEGA geil hey",
-          "Dafür bekommst du ne 1 in WebIT!"
+          ""
         ]
       }
     },
