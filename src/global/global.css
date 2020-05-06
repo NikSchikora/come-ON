@@ -30,5 +30,8 @@ color: #28554E;
 }
 
 #inventar {
-    position: absolute;
+    position: fixed;
+    top:40%;
+    bottom: 50%;
+    
 }
