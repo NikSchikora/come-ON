@@ -27,8 +27,8 @@
     }
   },
   "object": {
-    "sprite": "missions/exampleMission/sprite.jpg",
-    "X": 2059,
-    "Y": 2583
+    "sprite": "missions/exampleMission/sprite.png",
+    "X": 1323,
+    "Y": 2209
   }
 }
