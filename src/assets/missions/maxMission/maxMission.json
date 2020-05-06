@@ -4,8 +4,8 @@
   "sequence": ["intro", "middle", "complete"],
   "respondingChar": {
     "name": "Max",
-    "positionX": 100,
-    "positionY": 100,
+    "positionX": 250,
+    "positionY": 250,
     "charPath": "assets/npc/mester.png",
     "dialogues": {
       "intro": [
@@ -28,7 +28,7 @@
   },
   "object": {
     "sprite": "missions/exampleMission/sprite.jpg",
-    "X": 2583,
-    "Y": 2059 
+    "X": 2059,
+    "Y": 2583
   }
 }

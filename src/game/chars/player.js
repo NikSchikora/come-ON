@@ -1,5 +1,6 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
+// import Max from "../mission/mission.js";
 export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
@@ -83,10 +84,12 @@ export default class Player {
   }
 
   loadMission() {
-    let data = this.scene.cache.json.get("exampleMissionData");
+    let data = this.scene.cache.json.get("maxMissionData");
     this.activeMission = new Mission(data, this.scene, this);
     this.activeMission.initializeMission();
     console.log(this.activeMission.currentState);
+
+
   }
 
   getCurrentMission() {
