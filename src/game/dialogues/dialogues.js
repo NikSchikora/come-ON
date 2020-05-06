@@ -7,7 +7,7 @@ export default class Dialogue {
     this.scene = scene;
   }
 
-  createSpeechBubble(x, y, width, height, quote) {
+  createSpeechBubble(x, y, quote) {
     var maxWidth = 150;
     var charakters = quote.length;
 
@@ -71,5 +71,6 @@ export default class Dialogue {
       bubble.x + bubbleWidth / 2 - b.width / 2,
       bubble.y + bubbleHeight / 2 - b.height / 2
     );
+    return [bubble, content];
   }
 }

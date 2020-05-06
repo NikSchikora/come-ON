@@ -10,6 +10,7 @@ export default class Mission {
     sequence = data["sequence"];
     object = data["object"];
     this.currentState = sequence[0];
+    this.stateCount = 0;
   }
 
   initializeMission() {
@@ -20,7 +21,8 @@ export default class Mission {
     console.log(this.data["name"] + "Object");
   }
 
-  runSequence() {}
-
-  complete() {}
+  nextSequence() {
+    this.stateCount++;
+    this.currentState = sequence[this.stateCount];
+  }
 }

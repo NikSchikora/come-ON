@@ -3,10 +3,18 @@
   "x": 1691,
   "y": 2720,
   "sprite": "npcs/mester/mester.png",
-  "dialogue": [
-    "Test1",
-    "anderer teil vom Dialog her",
-    "Hier stehen dann sachen oder so",
-    "idk at all"
-  ]
+  "dialogue": {
+    "intro": [
+      "Hallo",
+      "Ich bin der Mester",
+      "Ich bin der Leiter der DHBW und so ...",
+      "Leider kann die jetzt halt nicht aufmachen lol"
+    ],
+    "complete": [
+      "Ja geil, danke dir fürs fertig machen oder so",
+      "Jetzt kann die DHBW endlich aufmachen",
+      "Und jetzt geh mal bitte weg, ja ....",
+      "Echt hey, kein Bock mehr auf dich"
+    ]
+  }
 }
