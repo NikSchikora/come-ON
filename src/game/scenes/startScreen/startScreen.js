@@ -23,10 +23,9 @@ export default class StartScreen extends Phaser.Scene {
       detune: 0,
       seek: 0,
       loop: true,
-      delay: 0,
     });
 
-    this.sfx.play();
+    this.sfx.play('', { delay: 1.5 });
 
     let enter = this.add
       .image(centerX, centerY + 180, "enter")

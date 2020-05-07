@@ -35,7 +35,7 @@ export default class MainScene extends Phaser.Scene {
       delay: 0,
     });
 
-    this.sfx2.play();
+    this.sfx2.play('', { delay: 1.5 });
 
     this.cameras.main.roundPixels = true;
 
