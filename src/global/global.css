@@ -43,6 +43,7 @@ h2 {
     top:40%;
     bottom: 50%;
     left: 3%;
+    visibility: hidden;
     
 }
 

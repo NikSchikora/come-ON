@@ -78,6 +78,7 @@ export default class MainScene extends Phaser.Scene {
     this.loader.create();
 
     this.setCounter();
+    this.setInventar();
   }
 
   update() {
@@ -91,5 +92,11 @@ export default class MainScene extends Phaser.Scene {
     var counternumber = document.getElementById("counter");
     counternumber.innerHTML = counter;
     counterbox.style.visibility = "visible";
+  }
+
+  setInventar() {
+    console.log("inventar ahoi!");
+    var inventarbox = document.getElementById("inventarbox");
+    inventarbox.style.visibility = "visible";
   }
 }
