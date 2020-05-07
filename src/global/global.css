@@ -38,6 +38,15 @@ h2 {
         visibility: hidden;
 }
 
+#inventarbox {
+    position: fixed;
+    top:40%;
+    bottom: 50%;
+    left: 3%;
+    
+}
+
+
 tr {
     height: 20px;
 }
