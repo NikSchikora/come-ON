@@ -2,6 +2,8 @@ body {
     padding: 0;
     margin: 0;
     background-color: #262626;
+    color: white;
+
 }
 
 #main {
@@ -13,4 +15,28 @@ body {
 #game-container {
     display: inline-block;
     transform-origin: center;
+}
+
+ul {
+    padding-left: 0;
+}
+
+h2 {
+    background-color: rgb(17, 87, 26);
+    color: rgb(255, 255, 255);
+}
+
+#border {
+    color: rgb(17, 87, 26);
+}
+
+#counter {
+        position: fixed;
+        top: 76%;
+        bottom: 50%;
+        left: 77%;
+}
+
+tr {
+    height: 20px;
 }
