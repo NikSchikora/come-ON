@@ -21,21 +21,21 @@ export default class MainScene extends Phaser.Scene {
     this.npcs = [];
     this.speechManager = new Dialogue(this);
 
-    this.load.audio("mainMusic", "startScene/No_Good_Right.mp3");
+    // this.load.audio("mainMusic", "startScene/No_Good_Right.mp3");
   }
 
   create() {
-    this.sfx2 = this.sound.add("mainMusic", {
-      mute: false,
-      volume: 0.1,
-      rate: 1,
-      detune: 0,
-      seek: 0,
-      loop: true,
-      delay: 0,
-    });
+    // this.sfx2 = this.sound.add("mainMusic", {
+    //   mute: false,
+    //   volume: 0.1,
+    //   rate: 1,
+    //   detune: 0,
+    //   seek: 0,
+    //   loop: true,
+    //   delay: 0,
+    // });
 
-    this.sfx2.play();
+    // this.sfx2.play();
 
     this.cameras.main.roundPixels = true;
 
@@ -85,9 +85,23 @@ export default class MainScene extends Phaser.Scene {
       30,
       "Hallo"
     );
+
+    this.setCounter();
+
   }
 
   update() {
     this.player.update();
+    
   }
+
+  setCounter(){
+    console.log("counter ahoi!")
+    var counter = this.loader.missioncounter;
+    var counterbox = document.getElementById("counterbox");
+    var counternumber = document.getElementById("counter");
+    counternumber.innerHTML = counter;
+    counterbox.style.visibility = "visible";
+  }
+
 }
