@@ -19,22 +19,22 @@ export default class PlayerSelector extends Phaser.Scene {
     this.rightButton = null;
     this.leftButton = null;
 
-    this.load.audio("selectAudio", "startScene/Soaring_High.mp3")
+    // this.load.audio("selectAudio", "startScene/Soaring_High.mp3")
   }
 
   create() {
 
-    this.sfx2 = this.sound.add("selectAudio", {
-      mute: false,
-      volume: 0.1,
-      rate: 1,
-      detune: 0,
-      seek: 0,
-      loop: true,
-      delay: 0,
-    });
+    // this.sfx3 = this.sound.add("selectAudio", {
+    //   mute: false,
+    //   volume: 0.1,
+    //   rate: 1,
+    //   detune: 0,
+    //   seek: 0,
+    //   loop: true,
+    //   delay: 0,
+    // });
 
-    this.sfx2.play();
+    // this.sfx3.play();
 
     this.add.image(0, 0, "background").setOrigin(0, 0);
     this.players.push(
@@ -105,6 +105,7 @@ export default class PlayerSelector extends Phaser.Scene {
 
     if (enterKey.isDown) {
       this.scene.start("mainScene", { player: "char" + (currentShown + 1) });
+      // this.sfx3.stop();
       console.log("char: " + (currentShown + 1));
     }
 
