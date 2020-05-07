@@ -5,11 +5,10 @@
   "sprite": "npcs/mester/mester.png",
   "dialogue": {
     "intro": [
-      "Hallo wie gehts denn so?",
+      "Hallo",
       "Ich bin der Mester",
       "Ich bin der Leiter der DHBW und so ...",
-      "Leider kann die jetzt halt nicht aufmachen lol",
-      "Such mal nen Schlüssel oder sowas in der Art idk"
+      "Leider kann die jetzt halt nicht aufmachen lol"
     ],
     "complete": [
       "Ja geil, danke dir fürs fertig machen oder so",
