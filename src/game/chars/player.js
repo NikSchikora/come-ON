@@ -108,8 +108,23 @@ export default class Player {
   }
 
   loadMission() {
-    let data = this.scene.cache.json.get("exampleMissionData");
-    this.activeMission = new Mission(data, this.scene, this);
+    let example = this.scene.cache.json.get("exampleMissionData");
+    let max = this.scene.cache.json.get("maxMissionData");
+    let donna = this.scene.cache.json.get("donnaMissionData");
+    let wirt = this.scene.cache.json.get("wirtMissionData");
+    this.activeMission = new Mission(example, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(max, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(donna, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(wirt, this.scene, this);
     this.activeMission.initializeMission();
     console.log(this.activeMission.currentState);
   }

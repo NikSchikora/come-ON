@@ -1,0 +1,30 @@
+{
+    "name": "wirtMission",
+    "version": "0.1",
+    "sequence": ["intro", "middle", "complete"],
+    "respondingChar": {
+      "name": "Wirt",
+      "positionX": 250,
+      "positionY": 250,
+      "charPath": "assets/npc/wirt.png",
+      "dialogues": {
+        "intro": [
+          "Servus!",
+          "Ich bin der Wirt dieses schönen Dörfchens.",
+          "Genieß dein Zeit hier...",
+          "..und komm gerne mal auf einen Krug Bier vorbei!"
+        ],
+        "middle": [
+          ""
+        ],
+        "complete": [
+          ""
+        ]
+      }
+    },
+    "object": {
+      
+      
+    }
+  }
+  

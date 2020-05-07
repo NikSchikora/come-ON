@@ -1,8 +1,8 @@
 import NPC from "../chars/npc";
 
 //Array of all missions, add new missions by name here
-const missions = ["exampleMission"];
-const npcs = ["mester"];
+const missions = ["exampleMission", "maxMission", "donnaMission", "wirtMission"];
+const npcs = [ "mester","max", "donna", "wirt"];
 export default class MissionLoader {
   constructor(scene) {
     this.scene = scene;

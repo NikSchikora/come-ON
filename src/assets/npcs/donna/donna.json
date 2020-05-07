@@ -1,0 +1,13 @@
+{
+    "name": "donna",
+    "x": 2212,
+    "y": 2065,
+    "sprite": "npcs/donna/donna.png",
+    "dialogue": [
+      "Test1",
+      "anderer teil vom Dialog her",
+      "Hier stehen dann sachen oder so",
+      "idk at all donna"
+    ]
+  }
+  

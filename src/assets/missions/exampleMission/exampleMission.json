@@ -28,8 +28,8 @@
     }
   },
   "object": {
-    "sprite": "missions/exampleMission/sprite.jpg",
-    "X": 2059,
-    "Y": 2583
+    "sprite": "missions/exampleMission/sprite.png",
+    "X": 1328,
+    "Y": 2594
   }
 }

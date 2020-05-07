@@ -1,0 +1,35 @@
+{
+    "name": "donnaMission",
+    "version": "0.1",
+    "sequence": ["intro", "middle", "complete"],
+    "respondingChar": {
+      "name": "Donna",
+      "positionX": 250,
+      "positionY": 250,
+      "charPath": "assets/npc/donna.png",
+      "dialogues": {
+        "intro": [
+          "Hi, ich bin Donna",
+          "Dich hab ich hier ja noch nie gesehen.",
+          "Bring mir meinen Fuchs, dann führe ich dich hier ein wenig herum",
+          
+        ],
+        "middle": [
+          "Kein Fuchs, keine Tour",
+          "Und die Tour wäre schon sehr exklusiv.",
+          "Ich würde sie mir nicht entgehen lassen."
+        ],
+        "complete": [
+          "Yei, mein Fuchs!",
+          "Danke.",
+          "Ich bin eigentlich auch erst vor kurzem hergezogen. Schau dich also liber selber um oder frag einen anderen."
+        ]
+      }
+    },
+    "object": {
+      "sprite": "missions/donnaMission/sprite.png",
+      "X": 1499,
+      "Y": 2356
+    }
+  }
+  
