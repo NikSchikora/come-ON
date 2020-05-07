@@ -40,9 +40,9 @@ h2 {
 
 #inventarbox {
     position: fixed;
-    top:40%;
+    top: 12%;
     bottom: 50%;
-    left: 3%;
+    left: 77%;
     visibility: hidden;
     
 }
@@ -50,4 +50,16 @@ h2 {
 
 tr {
     height: 20px;
+}
+
+#tasten2 {
+    position: fixed;
+    top: 12%;
+    left: 4%;
+}
+
+#pfeiltaste {
+    position: fixed;
+    top: 27%;
+    left: 4%;
 }
