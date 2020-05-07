@@ -5,6 +5,7 @@ export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
     this.activeMission = null;
+    this.exampleactiveMission = null;
     this.collectedObjects = [];
 
     //Dialog-Stuff
@@ -85,9 +86,9 @@ export default class Player {
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
       console.log(player.body.x + ":" + player.body.y);
-      if (this.getDistanceSquared(this.activeMission.objectSprite) <= 500) {
-        this.collectedObjects.push(this.activeMission.objectSprite);
-        this.activeMission.objectSprite.destroy();
+      if (this.getDistanceSquared(this.exampleactiveMission.objectSprite) <= 500) {
+        this.collectedObjects.push(this.exampleactiveMission.objectSprite);
+        this.exampleactiveMission.objectSprite.destroy();
       }
       this.scene.loader.npcList.forEach(function (iteration) {
         if (this.getDistanceSquared(iteration.sprite) <= 500) {
@@ -112,9 +113,9 @@ export default class Player {
     let max = this.scene.cache.json.get("maxMissionData");
     let donna = this.scene.cache.json.get("donnaMissionData");
     let wirt = this.scene.cache.json.get("wirtMissionData");
-    this.activeMission = new Mission(example, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
+    this.exampleactiveMission = new Mission(example, this.scene, this);
+    this.exampleactiveMission.initializeMission();
+    console.log(this.exampleactiveMission.currentState);
 
     this.activeMission = new Mission(max, this.scene, this);
     this.activeMission.initializeMission();
