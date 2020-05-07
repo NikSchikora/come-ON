@@ -1,13 +1,19 @@
 {
-    "name": "wirt",
-    "x": 1673,
-    "y": 2112,
-    "sprite": "npcs/wirt/wirt.png",
-    "dialogue": [
-      "Test1",
-      "anderer teil vom Dialog her",
-      "Hier stehen dann sachen oder so",
-      "idk at all wirt"
+  "name": "wirt",
+  "x": 1673,
+  "y": 2112,
+  "sprite": "npcs/wirt/wirt.png",
+  "dialogue": {
+    "intro": [
+      "Hallo mein Freund",
+      "Ich bin der Wirt vom Brauhaus",
+      "Ich verkaufe Bier und Alkohol",
+      "Aber sind keine Gäste da ... schade"
+    ],
+    "complete": [
+      "Ah ok danke",
+      "Hier ein Bier aufs Haus oder so",
+      "Und jetzt geh mal bitte weg, ja ...."
     ]
   }
-  
+}

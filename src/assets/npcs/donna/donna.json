@@ -1,13 +1,20 @@
 {
-    "name": "donna",
-    "x": 2212,
-    "y": 2065,
-    "sprite": "npcs/donna/donna.png",
-    "dialogue": [
-      "Test1",
-      "anderer teil vom Dialog her",
-      "Hier stehen dann sachen oder so",
-      "idk at all donna"
+  "name": "donna",
+  "x": 2212,
+  "y": 2065,
+  "sprite": "npcs/donna/donna.png",
+  "dialogue": {
+    "intro": [
+      "WAS GEEEHT !!!!",
+      "Ich bin die Donna",
+      "Ich bin hier zuhause",
+      "WAASSSSS????",
+      "Such mal was für mich"
+    ],
+    "complete": [
+      "Ja super, danke dir fürs fertig machen oder so",
+      "Jetzt geh ich mal an die DHBW ... vielleicht",
+      "Mal schaun, bis dann!"
     ]
   }
-  
+}

@@ -4,7 +4,7 @@ export default class NPC {
     this.data = data;
     this.sprite = scene.add
       .image(data.x, data.y, data.name + "Sprite")
-      .setScale(0.5, 0.5);
+      .setScale(0.05, 0.05);
     this.dialogues = data.dialogue;
   }
 }

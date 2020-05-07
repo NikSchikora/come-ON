@@ -1,8 +1,13 @@
 import NPC from "../chars/npc";
 
 //Array of all missions, add new missions by name here
-const missions = ["exampleMission", "maxMission", "donnaMission", "wirtMission"];
-const npcs = [ "mester","max", "donna", "wirt"];
+const missions = [
+  "exampleMission",
+  "maxMission",
+  "donnaMission",
+  "wirtMission",
+];
+const npcs = ["mester", "max", "donna", "wirt"];
 export default class MissionLoader {
   constructor(scene) {
     this.scene = scene;
@@ -38,6 +43,7 @@ export default class MissionLoader {
       let data = this.scene.cache.json.get(npc + "Data");
       console.log(data);
       let char = new NPC(this.scene, data);
+      console.log(char);
       this.npcList.push(char);
     }, this);
   }
@@ -45,7 +51,7 @@ export default class MissionLoader {
   getNpcByName(name) {
     let retValue = null;
     this.npcList.forEach(function (iteration) {
-      if ((iteration.data.name = name)) {
+      if (iteration.data.name == name) {
         retValue = iteration;
       }
     }, this);

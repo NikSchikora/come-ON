@@ -85,12 +85,12 @@ export default class Player {
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
       console.log(player.body.x + ":" + player.body.y);
-      if (this.getDistanceSquared(this.activeMission.objectSprite) <= 1000) {
+      if (this.getDistanceSquared(this.activeMission.objectSprite) <= 500) {
         this.collectedObjects.push(this.activeMission.objectSprite);
         this.activeMission.objectSprite.destroy();
       }
       this.scene.loader.npcList.forEach(function (iteration) {
-        if (this.getDistanceSquared(iteration.sprite) <= 1000) {
+        if (this.getDistanceSquared(iteration.sprite) <= 500) {
           console.log(iteration.data.name);
           if (
             iteration.data.name == this.activeMission.data.respondingChar.name
@@ -100,8 +100,8 @@ export default class Player {
               this.activeMission.nextSequence();
               console.log(this.activeMission.currentState);
             }
-            this.runDialogue();
           }
+          this.runDialogue(iteration.data.name);
         }
       }, this);
     }
@@ -139,10 +139,8 @@ export default class Player {
     return xDif * xDif + yDif * yDif;
   }
 
-  runDialogue() {
-    let npc = this.scene.loader.getNpcByName(
-      this.activeMission.data.respondingChar.name
-    );
+  runDialogue(name) {
+    let npc = this.scene.loader.getNpcByName(name);
     if (npc != null) {
       this.inDoalogue = true;
       if (this.lastBubble != null) {
