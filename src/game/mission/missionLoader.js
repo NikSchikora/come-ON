@@ -8,8 +8,11 @@ const missions = [
   "wirtMission",
 ];
 const npcs = ["mester", "max", "donna", "wirt"];
+let missioncounter;
+
 export default class MissionLoader {
   constructor(scene) {
+    this.missioncounter = 0;
     this.scene = scene;
     this.npcList = [];
   }
