@@ -78,6 +78,16 @@ export default class Player {
       if (this.getDistanceSquared(this.activeMission.objectSprite) <= 1000) {
         this.collectedObjects.push(this.activeMission.objectSprite);
         this.activeMission.objectSprite.destroy();
+        // inventar 
+        console.log("item aufgesammelt");
+        var img = document.createElement('img');
+        img.src = "../src/assets/" + this.activeMission.data.object.sprite;
+        var itembox = document.getElementById("inventar");
+        itembox.appendChild(img);
+        console.log(img.src);
+        // inventar Ende
+
+
       }
       this.scene.loader.npcList.forEach(function (iteration) {
         if (this.getDistanceSquared(iteration.sprite) <= 1000) {
