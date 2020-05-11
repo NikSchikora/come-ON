@@ -28,6 +28,7 @@ export default class StartScreen extends Phaser.Scene {
 
     this.sfx.play();
 
+
     let enter = this.add
       .image(centerX, centerY + 180, "enter")
       .setScale(1.1, 1.1);
@@ -48,7 +49,7 @@ export default class StartScreen extends Phaser.Scene {
 
   update() {
     let enterKey = this.input.keyboard.addKey(
-      Phaser.Input.Keyboard.KeyCodes.ENTER
+         Phaser.Input.Keyboard.KeyCodes.ENTER
     );
 
     if (enterKey.isDown) {

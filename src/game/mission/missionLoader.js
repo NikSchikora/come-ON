@@ -10,7 +10,7 @@ export default class MissionLoader {
   }
 
   preload() {
-    //Loaad missions from array
+    //Load missions from array
     missions.forEach(function iterateMissions(mission) {
       //Load JSONS
       this.scene.load.json(

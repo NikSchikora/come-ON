@@ -1,5 +1,7 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
+import MainScene from '../scenes/mainScene.js'
+
 export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
@@ -38,6 +40,23 @@ export default class Player {
 
     this.keys = scene.input.keyboard.createCursorKeys();
     this.loadMission();
+
+  }
+
+  preload() {
+    this.load.audio("pickUpSound", "src/assets/playerSelector/shooting_star-Mike_Koenig-1132888100.mp3")
+  }
+
+  create() {
+    this.pickUp = this.sound.add("pickUpSound", {
+      mute: false,
+      volume: 0.1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: false,
+      delay: 0,
+    });
   }
 
   update() {
@@ -77,6 +96,8 @@ export default class Player {
       console.log(player.body.x + ":" + player.body.y);
       if (this.getDistanceSquared(this.activeMission.objectSprite) <= 1000) {
         this.collectedObjects.push(this.activeMission.objectSprite);
+        // this.sound.play('pickUpSound')
+        this.pickUp.play();
         this.activeMission.objectSprite.destroy();
       }
       this.scene.loader.npcList.forEach(function (iteration) {

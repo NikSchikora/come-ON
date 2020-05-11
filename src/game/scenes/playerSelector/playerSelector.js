@@ -89,6 +89,7 @@ export default class PlayerSelector extends Phaser.Scene {
 
     if (enterKey.isDown) {
       this.scene.start("mainScene", { player: "char" + (currentShown + 1) });
+      clearInterval(blinkingInterval);
       console.log("char: " + (currentShown + 1));
     }
 
