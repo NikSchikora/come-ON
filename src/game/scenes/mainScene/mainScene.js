@@ -84,9 +84,18 @@ export default class MainScene extends Phaser.Scene {
       "PersonObject",
       (obj) => obj.name === "StartingPoint"
     );
+
+    const DHBW = map.findObject(
+      "PersonObject",
+      (obj) => obj.name === "DHBW"
+    );
+
+    console.log(DHBW);
+
+
     console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
 
-    this.player = new Player(this, spawnPoint.x, spawnPoint.y);
+    this.player = new Player(this, spawnPoint.x, spawnPoint.y, DHBW.x , DHBW.y);
 
     const camera = this.cameras.main;
     camera.startFollow(this.player.sprite);

@@ -1,12 +1,22 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
 import Dialogue from "../dialogues/dialogues.js";
+// import Indoor from "../scenes/IndoorScene.js";
+
+  // let interactionX, interactionY;
 export default class Player {
-  constructor(scene, x, y) {
+
+  constructor(scene, x, y, interactionX, interactionY) {
     this.scene = scene;
     this.activeMission = null;
     this.exampleactiveMission = null;
     this.collectedObjects = [];
+    this.interactionX = interactionX;
+    this.interactionY = interactionY;
+
+    console.log( interactionX + " : " + interactionY);
+
+
 
     //Dialog-Stuff
     this.inDoalogue = false;
@@ -101,8 +111,23 @@ export default class Player {
         console.log(img.src);
         // inventar Ende
 
+        console.log( "achtung" + this.interactionX + " : " + this.interactionY);
+        console.log(this.getDistanceSquaredDoor());
+
+
 
       }
+
+      if (this.getDistanceSquaredDoor() <= 2600) {
+        console.log("indoor yay");
+        this.start("IndoorScene");
+      }
+
+      if(player.body.x <= 1971){
+        console.log("taddaa" + this.getDistanceSquaredDoor());
+      }
+
+
       this.scene.loader.npcList.forEach(function (iteration) {
         if (this.getDistanceSquared(iteration.sprite) <= 500) {
           console.log(iteration.data.name);
@@ -150,6 +175,12 @@ export default class Player {
   getDistanceSquared(object) {
     let xDif = this.sprite.x - object.x;
     let yDif = this.sprite.y - object.y;
+    return xDif * xDif + yDif * yDif;
+  }
+
+  getDistanceSquaredDoor() {
+    let xDif = this.sprite.x - this.interactionX;
+    let yDif = this.sprite.y - this.interactionY;
     return xDif * xDif + yDif * yDif;
   }
 
