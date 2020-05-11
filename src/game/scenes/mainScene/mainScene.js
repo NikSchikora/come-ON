@@ -23,7 +23,7 @@ export default class MainScene extends Phaser.Scene {
     this.speechManager = new Dialogue(this);
 
     this.load.audio("mainMusic", "startScene/No_Good_Right.mp3");
-    // this.load.audio("pickUpSound", "src/assets/playerSelector/players/shooting_star-Mike_Koenig-1132888100.mp3")
+    // this.load.audio("pickUpSound", "../../../playerSelector/shooting_star-Mike_Koenig-1132888100.mp3")
   }
 
   create() {
@@ -39,7 +39,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.sfx2.play();
 
-    // pickUp = this.sound.add("pickUpSound", {
+    // this.pickUp = this.sound.add("pickUpSound", {
     //   mute: false,
     //   volume: 0.1,
     //   rate: 1,
@@ -48,6 +48,9 @@ export default class MainScene extends Phaser.Scene {
     //   loop: false,
     //   delay: 0,
     // });
+
+    // this.pickUp.play();
+    // console.log("sound!!!!Main");
 
     
 

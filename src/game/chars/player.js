@@ -1,6 +1,6 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
-import MainScene from '../scenes/mainScene.js'
+// import MainScene from '../scenes/mainScene.js'
 
 export default class Player {
   constructor(scene, x, y) {
@@ -43,21 +43,21 @@ export default class Player {
 
   }
 
-  preload() {
-    this.load.audio("pickUpSound", "src/assets/playerSelector/shooting_star-Mike_Koenig-1132888100.mp3")
-  }
+  // preload() {
+  //   this.load.audio("pickUpSound", "src/assets/playerSelector/shooting_star-Mike_Koenig-1132888100.mp3")
+  // }
 
-  create() {
-    this.pickUp = this.sound.add("pickUpSound", {
-      mute: false,
-      volume: 0.1,
-      rate: 1,
-      detune: 0,
-      seek: 0,
-      loop: false,
-      delay: 0,
-    });
-  }
+  // create() {
+  //   this.pickUp = this.sound.add("pickUpSound", {
+  //     mute: false,
+  //     volume: 0.1,
+  //     rate: 1,
+  //     detune: 0,
+  //     seek: 0,
+  //     loop: false,
+  //     delay: 0,
+  //   });
+  // }
 
   update() {
     const cursors = this.keys;
@@ -92,14 +92,26 @@ export default class Player {
       player.anims.stop();
     }
 
+
+    // SOUND
+
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
       console.log(player.body.x + ":" + player.body.y);
       if (this.getDistanceSquared(this.activeMission.objectSprite) <= 1000) {
         this.collectedObjects.push(this.activeMission.objectSprite);
+
+          var audio = new Audio("../../../playerSelector/shooting_star-Mike_Koenig-1132888100.mp3");
+          audio.play();
+          console.log("soundssssss");
         // this.sound.play('pickUpSound')
-        this.pickUp.play();
+        // this.pickUp.play();
         this.activeMission.objectSprite.destroy();
       }
+
+      // SOUND ENDE
+
+
+
       this.scene.loader.npcList.forEach(function (iteration) {
         if (this.getDistanceSquared(iteration.sprite) <= 1000) {
           console.log(iteration.data.name);
