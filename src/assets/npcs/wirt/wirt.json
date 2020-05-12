@@ -3,6 +3,7 @@
   "x": 1673,
   "y": 2112,
   "sprite": "npcs/wirt/wirt.png",
+  "mission": "wirtMission",
   "dialogue": {
     "intro": [
       "Hallo mein Freund",
