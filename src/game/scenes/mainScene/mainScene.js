@@ -123,6 +123,9 @@ export default class MainScene extends Phaser.Scene {
 
     this.setCounter();
     this.setInventar();
+
+    
+    // console.log(this.player.x + ":" + this.player.y);
   }
 
   update() {
@@ -131,7 +134,8 @@ export default class MainScene extends Phaser.Scene {
     );
     this.player.update();
     if (enterKey.isDown) {
-      this.scene.start("indoor");
+      // this.scene.start("indoor");
+      this.player.openDoor(this);
       console.log("lets go inside");
     }
   }

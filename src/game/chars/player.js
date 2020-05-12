@@ -118,13 +118,9 @@ export default class Player {
 
       }
 
-      if (this.getDistanceSquaredDoor() <= 2600) {
-        console.log("indoor yay");
-        this.start("IndoorScene");
-      }
-
+      
       if(player.body.x <= 1971){
-        console.log("taddaa" + this.getDistanceSquaredDoor());
+        console.log("taddaa im at the door " + this.getDistanceSquaredDoor());
       }
 
 
@@ -182,6 +178,28 @@ export default class Player {
     let xDif = this.sprite.x - this.interactionX;
     let yDif = this.sprite.y - this.interactionY;
     return xDif * xDif + yDif * yDif;
+  }
+
+  getDistanceSquaredOutside() {
+    let xDif = this.sprite.x - this.interactionX;
+    let yDif = this.sprite.y - this.interactionY;
+    return xDif * xDif + yDif * yDif;
+  }
+
+  openDoor(input){
+      if (this.getDistanceSquaredDoor() <= 2600) {
+        console.log("PLAYER: indoor yay");
+        input.scene.start("indoor");
+        console.log("PLAYER: indoor yay ende");
+      }
+    }
+
+  closeDoor(input){
+        if (this.getDistanceSquaredOutside() <= 2600) {
+          console.log("PLAYER: outside yay");
+          input.scene.start("mainScene");
+          console.log("PLAYER: outside yay ende");
+        }
   }
 
   runDialogue(name) {
