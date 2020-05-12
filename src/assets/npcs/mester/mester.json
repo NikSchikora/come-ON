@@ -1,7 +1,7 @@
 {
   "name": "mester",
-  "x": 1691,
-  "y": 2720,
+  "x": 1827,
+  "y": 2870,
   "sprite": "npcs/mester/mester.png",
   "dialogue": {
     "intro": [
