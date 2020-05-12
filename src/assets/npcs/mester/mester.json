@@ -6,16 +6,46 @@
   "mission": "exampleMission",
   "dialogue": {
     "intro": [
-      "Hallo wie gehts denn so?",
-      "Ich bin der Mester",
-      "Ich bin der Leiter der DHBW und so ...",
-      "Leider kann die jetzt halt nicht aufmachen",
-      "Such mal bitte den Schlüssel"
+      "...",
+      "... ...",
+      "UÄHHHHH",
+      "... ...",
+      "...hm?...",
+      "...Hallo…?",
+      "Wer bist du denn? in Student? Na dann bist du der erste, den ich dieses Jahr sehe. Alle anderen haben abgesagt!",
+      "Die schöne DHBW!! So leer. ",
+      "Nur der Wirth geistert umher und fängt schon aus Verzweiflung an mit mir über Statistiken zu reden.",
+      "Die Uni fällt dieses Semester also wohl aus. UÄHHH! Ach mein schöner ON-Studiengang!",
+      "Die DHBW muss schließen.",
+      "...",
+      "Was sagst du da? Du willst umherreisen und andere davon überzeugen hier zu studieren?",
+      "Das ist ja eine grandiose Idee! Um den Studiengang wieder zu öffnen, brauchen wir x Studenten. Aber über mehr freue ich mich natürlich auch.",
+      "Ich bin mir sicher, dass es hier viele Leute gibt, die du überzeugen kannst, aber so leicht wirst du das nicht schaffen. Die meisten *eigentlich alle* wollen eine Gegenleistung.",
+      "Ich wünsche dir viel Erfolg!",
+      "...",
+      "... ...",
+      "....ehm…",
+      "..da wäre vielleicht doch noch etwas.",
+      "Sieh es als Übung für die anderen...eh… … Missionen! Ja das ist das passende Wort: Missionen!",
+      "ich habe ja schon erwähnt, dass der Herr Wirth mich mit seinen Statistikfakten überhäuft! Ich hab das nicht mehr ausgehalten!",
+      "Es könnte also sein, dass ich ihn deswegen im DHBW-Gebäude aus Trotz eingeschlossen habe.",
+      "Leider habe ich danach meinen Schlüssel verloren.",
+      "Wäre nett, wenn du ihn mir wieder bringst.",
+      "Ich selber muss hier die Stellung halten, falls doch noch ein anderer Student auftaucht.",
+      "Also lauf los und such nach meinem Schlüssel. Er müsste hier irgendwo in der Nähe herumliegen.",
+      "Wenn du ihn gefunden hast, sprich einfach nochmal mit mir."
+    ],
+    "during": [
+      "...mein Schlüssel?"
     ],
     "complete": [
-      "Ja super, danke dir fürs fertig machen oder so",
-      "Jetzt kann die DHBW endlich aufmachen",
-      "Und jetzt geh mal bitte und such Studenten ..."
+      "OH! Mein Schlüssel! Vielen Dank!",
+      "Jetzt kanns losgehen. Die Türen sind offen und erwarten neue Studenten!",
+      "Du bist nun für weitere Missionen gewappnet. Jetzt weißt du ja, wie es hier funktioniert und was ich mit Gegenleistungen meinte.",
+      "Viel Erfolg!"
+    ],
+    "after": [
+      "...meine Studenten?"
     ]
   }
 }

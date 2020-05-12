@@ -96,6 +96,12 @@ export default class Player {
           this.collectedObjects.push(this.activeMission.objectSprite);
           this.activeMission.objectSprite.destroy();
 
+          var audio = new Audio(
+            "../../../playerSelector/shooting_star-Mike_Koenig-1132888100.mp3"
+          );
+          audio.play();
+          this.exampleactiveMission.objectSprite.destroy();
+
           // inventar
           console.log("item aufgesammelt");
           var img = document.createElement("img");
@@ -107,31 +113,32 @@ export default class Player {
           //Next sequence
           this.activeMission.nextSequence();
         }
-      }
-      this.scene.loader.npcList.forEach(function (iteration) {
-        if (this.getDistanceSquared(iteration.sprite) <= 500) {
-          let ms = iteration.data.mission;
-          if (!this.completedMissions.includes(ms)) {
-            if (this.activeMission == null) {
-              this.activeMission = new Mission(
-                this.scene.cache.json.get(ms + "Data"),
-                this.scene,
-                this
-              );
-              this.activeMission.initializeMission();
+        this.scene.loader.npcList.forEach(function (iteration) {
+          if (this.getDistanceSquared(iteration.sprite) <= 500) {
+            let ms = iteration.data.mission;
+            if (!this.completedMissions.includes(ms)) {
+              if (this.activeMission == null) {
+                this.activeMission = new Mission(
+                  this.scene.cache.json.get(ms + "Data"),
+                  this.scene,
+                  this
+                );
+                this.activeMission.initializeMission();
+              }
+              if (this.activeMission == null) {
+                this.runDialogue("standard");
+              } else if (
+                this.activeMission.data.respondingChar.name ==
+                iteration.data.name
+              ) {
+                this.runDialogue(iteration.data.name);
+              }
+            } else {
+              this.runDialogue("completed");
             }
-            if (this.activeMission == null) {
-              this.runDialogue("standard");
-            } else if (
-              this.activeMission.data.respondingChar.name == iteration.data.name
-            ) {
-              this.runDialogue(iteration.data.name);
-            }
-          } else {
-            this.runDialogue("completed");
           }
-        }
-      }, this);
+        }, this);
+      }
     }
   }
 
