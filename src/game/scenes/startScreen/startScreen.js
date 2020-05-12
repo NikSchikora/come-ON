@@ -16,15 +16,15 @@ export default class StartScreen extends Phaser.Scene {
     this.add.image(centerX, centerY, "bg");
     this.add.image(centerX + 25, centerY - 130, "logo");
 
-    // this.sfx = this.sound.add("startMusic", {
-    //   mute: false,
-    //   volume: 0.1,
-    //   rate: 1,
-    //   detune: 0,
-    //   seek: 0,
-    //   loop: true,
-    //   delay: 0,
-    // });
+    this.sfx = this.sound.add("startMusic", {
+      mute: false,
+      volume: 0.1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0,
+    });
 
     // this.sfx.play();
 

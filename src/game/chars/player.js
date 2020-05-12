@@ -88,6 +88,8 @@ export default class Player {
       console.log(player.body.x + ":" + player.body.y);
       if (this.getDistanceSquared(this.exampleactiveMission.objectSprite) <= 500) {
         this.collectedObjects.push(this.exampleactiveMission.objectSprite);
+        var audio = new Audio("../../../playerSelector/shooting_star-Mike_Koenig-1132888100.mp3");
+        audio.play();
         this.exampleactiveMission.objectSprite.destroy();
 
 
