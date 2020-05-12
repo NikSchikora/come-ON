@@ -129,6 +129,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   update() {
+    this.player.update();
     let enterKey = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.ENTER
     );
