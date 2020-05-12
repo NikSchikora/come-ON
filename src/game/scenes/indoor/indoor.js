@@ -2,7 +2,7 @@ import Phaser from "../../engine/phaser.js";
 import Player from "../../chars/player.js";
 // import MissionLoader from "../../mission/missionLoader.js";
 
-export default class MainScene extends Phaser.Scene {
+export default class Indoor extends Phaser.Scene {
   init(data) {
     this.playerSprite = data.player;
   }
@@ -11,8 +11,8 @@ export default class MainScene extends Phaser.Scene {
     //   frameWidth: 95,
     //   frameHeight: 176,
     // });
-    this.load.tilemapTiledJSON("indoor-data", "indoor/dhbw.json");
-    this.load.image("tileset", "indoor/InteriorDHBW.png");
+    this.load.tilemapTiledJSON("indoor-data", "indoor/map/dhbw.json");
+    this.load.image("tileset", "indoor/map/InteriorDHBW.png");
 
     //Load missions via MissionLoader
     // this.loader = new MissionLoader(this);
