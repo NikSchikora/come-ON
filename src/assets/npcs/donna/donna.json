@@ -3,18 +3,32 @@
   "x": 2212,
   "y": 2065,
   "sprite": "npcs/donna/donna.png",
+  "mission": "donnaMission",
   "dialogue": {
     "intro": [
-      "WAS GEEEHT !!!!",
-      "Ich bin die Donna",
-      "Ich bin hier zuhause",
-      "WAASSSSS????",
-      "Such mal was für mich"
+      "Sieh an wer da kommt! Es wird schon gemurmelt, dass jemand bereit ist einiges zu geben um die DHBW wieder zu öffnen.",
+      "Bis du mich soweit bekommst, dass ich mir überlege einzusteigen, musst du mir erst einmal beweisen, dass du der Hochschule überhaupt gerecht wirst.",
+      "Wie viel bist du wirklich bereit zu tun?",
+      "...",
+      "Ich hab da eine Idee.",
+      "Mir ist vor kurzem mein Haustier entlaufen, ich kann sie nirgends finden... bringst du mir meine Lexie heil und gesund wieder zurück, können wir nochmal über die Uni reden.",
+      "Nur momentan kann ich über nichts anderes als meine Lexie nachdenken..",
+      "Ich bin gespannt und warte auf dich!",
+      "...",
+      "Eine Sache wäre da noch.",
+      "Lexie kann ziemlich wild sein. Sie ist kein .. *gewöhnliches* Haustier. Sie zu zähmen kann schwer sein."
+    ],
+    "during": [
+      "Du hast ja noch gar keine Kampfspuren. Scheinst nicht weit gekommen zu sein bei der Suche."
     ],
     "complete": [
-      "Ja super, danke dir fürs fertig machen oder so",
-      "Jetzt geh ich mal an die DHBW ... vielleicht",
-      "Mal schaun, bis dann!"
+      "Seh ich das richtig? Mein Fuchs ist tatsächlich zahm bei dir geworden?",
+      "Wie hast du das nur angestellt... Respekt!",
+      "Du bist wie gemacht um hier zu studieren. So ein kluger Kopf!",
+      "Ich werde mich dir anschließen. Es heißt doch schließlich an Herausforderungen wächst man. Dann bis zum Semesterbeginn!"
+    ],
+    "after": [
+      "Schau Lexie, da ist dein Freund! Den sehen wir bald wieder wenn die Uni beginnt."
     ]
   }
 }

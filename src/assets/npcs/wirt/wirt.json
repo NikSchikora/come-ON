@@ -6,15 +6,22 @@
   "mission": "wirtMission",
   "dialogue": {
     "intro": [
-      "Hallo mein Freund",
-      "Ich bin der Wirt vom Brauhaus",
-      "Ich verkaufe Bier und Alkohol",
-      "Aber sind keine Gäste da ... schade"
+      "Griaß Good. Wieda mal a Doog wo nix geht. Is schon deprimierend.",
+      "Jedes Mal steh i hier, woart af a paar Studenten. Owa nix gibt’s!",
+      "Die Stadt is einfach wie asgstorbn. Huift nix, i kann mi nimmer ums Brauhaus kümmern ohne Geschäft..",
+      "Und Sie? Sie schein' ein Student zu sey. Was treibt sie in die Gegend? Woin Sie a Bier?"
+    ],
+    "during": [
+      "Wolln Sie nun oans?"
     ],
     "complete": [
-      "Ah ok danke",
-      "Hier ein Bier aufs Haus oder so",
-      "Und jetzt geh mal bitte weg, ja ...."
+      "Wos zeigen Sie mir da? Oa Rezeptbiachl!",
+      "...",
+      "Da kimmt ma ja die Heimat zruck in den Sinn...",
+      "Ja! Das wird die guarde Stub’n wiederbeleben, dankschee!"
+    ],
+    "after": [
+      "Sauerbroad’n und Kneedl, so hamma’s gern."
     ]
   }
 }

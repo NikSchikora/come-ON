@@ -3,18 +3,29 @@
   "x": 2240,
   "y": 2846,
   "sprite": "npcs/max/max.png",
+  "mission": "maxMission",
   "dialogue": {
     "intro": [
-      "Hallo wie gehts denn so?",
-      "Ich bin der Max",
-      "Ich weiß nicht was ich machen soll",
-      "Studieren? Keine Ahnung ob ich des will",
-      "Such mal was für mich"
+      "Hi, seid ihr Studenten der DHBW wirklich so Langweiler wie man sagt?",
+      "Also mit so einer langweiligen Truppe würd ich nicht studieren wollen.",
+      "Aber du kannst mir ja das Gegenteil beweisen!",
+      "Geh zu der spuckenden Höhle und bring mir einen Beweis mit, dass du dort warst. Dann könnte sich mein Bild zu deiner Uni eventuell ändern.",
+      "...",
+      "Was ich mit spuckender Höhle meine?",
+      "Haha. HAHAHA!",
+      "DIE Höhle. Du bist schon echt lustig. Na los, geh schon."  
+    ],
+    "during": [
+      "Hast du wohl doch zu viel Angst?"
     ],
     "complete": [
-      "Ja super, danke dir fürs fertig machen oder so",
-      "Jetzt geh ich mal an die DHBW ... vielleicht",
-      "Mal schaun, bis dann!"
+      "Du bist wirklich zurück? Na zeig schon den Beweis.",
+      "...",
+      "Da hab ich mich wohl in dir getäuscht, mit euch kann also tatsächlich interessante Dinge erleben.",
+      "Vielleicht schaue ich mir den Laden mal genauer an."
+    ],
+    "after": [
+      "Du bist echt korrekt."
     ]
   }
 }
