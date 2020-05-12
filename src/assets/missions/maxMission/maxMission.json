@@ -1,24 +1,12 @@
 {
   "name": "maxMission",
   "version": "0.1",
-  "sequence": ["intro", "middle", "complete"],
+  "sequence": ["intro", "complete"],
   "respondingChar": {
-    "name": "Max",
+    "name": "max",
     "positionX": 250,
     "positionY": 250,
-    "charPath": "assets/npc/mester.png",
-    "dialogues": {
-      "intro": [
-        "Hallo, Max hier",
-        "Hab mich verlaufen"
-      ],
-      "middle": [
-        "hm...wo bin ich hier nochmal?"
-      ],
-      "complete": [
-        "Cool.Danke. Jetzt muss ich nur noch herausfinden, wo ich auf der Karte bin...."
-      ]
-    }
+    "charPath": "assets/npc/mester.png"
   },
   "object": {
     "sprite": "missions/exampleMission/sprite.png",

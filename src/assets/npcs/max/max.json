@@ -3,6 +3,7 @@
   "x": 2240,
   "y": 2846,
   "sprite": "npcs/max/max.png",
+  "mission": "maxMission",
   "dialogue": {
     "intro": [
       "Hallo wie gehts denn so?",

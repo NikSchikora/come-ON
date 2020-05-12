@@ -3,6 +3,7 @@
   "x": 1691,
   "y": 2720,
   "sprite": "npcs/mester/mester.png",
+  "mission": "exampleMission",
   "dialogue": {
     "intro": [
       "Hallo wie gehts denn so?",

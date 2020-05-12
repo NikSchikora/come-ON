@@ -1,4 +1,5 @@
 import NPC from "../chars/npc";
+import Mission from "./mission";
 
 //Array of all missions, add new missions by name here
 const missions = [
@@ -42,11 +43,9 @@ export default class MissionLoader {
   }
 
   create() {
-    npcs.forEach(function createAssets(npc) {
+    npcs.forEach(function (npc) {
       let data = this.scene.cache.json.get(npc + "Data");
-      console.log(data);
       let char = new NPC(this.scene, data);
-      console.log(char);
       this.npcList.push(char);
     }, this);
   }

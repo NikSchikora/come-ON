@@ -18,6 +18,7 @@ export default class MainScene extends Phaser.Scene {
     this.loader = new MissionLoader(this);
     this.loader.preload();
     this.npcs = [];
+    this.missions = [];
 
     // this.load.audio("mainMusic", "startScene/No_Good_Right.mp3");
   }

@@ -3,6 +3,7 @@
   "x": 2212,
   "y": 2065,
   "sprite": "npcs/donna/donna.png",
+  "mission": "donnaMission",
   "dialogue": {
     "intro": [
       "WAS GEEEHT !!!!",

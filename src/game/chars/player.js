@@ -5,8 +5,8 @@ export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
     this.activeMission = null;
-    this.exampleactiveMission = null;
     this.collectedObjects = [];
+    this.completedMissions = [];
 
     //Dialog-Stuff
     this.inDoalogue = false;
@@ -45,7 +45,6 @@ export default class Player {
       .setScale(0.22, 0.22);
 
     this.keys = scene.input.keyboard.createCursorKeys();
-    this.loadMission();
     this.speechManager = new Dialogue(this.scene);
   }
 
@@ -86,60 +85,54 @@ export default class Player {
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
       console.log(player.body.x + ":" + player.body.y);
-      if (this.getDistanceSquared(this.exampleactiveMission.objectSprite) <= 500) {
-        this.collectedObjects.push(this.exampleactiveMission.objectSprite);
-        this.exampleactiveMission.objectSprite.destroy();
+      console.log(
+        "Camera: " +
+          this.scene.cameras.main.centerX +
+          " : " +
+          this.scene.cameras.main.centerY
+      );
+      if (this.activeMission != null) {
+        if (this.getDistanceSquared(this.activeMission.objectSprite) <= 500) {
+          this.collectedObjects.push(this.activeMission.objectSprite);
+          this.activeMission.objectSprite.destroy();
 
+          // inventar
+          console.log("item aufgesammelt");
+          var img = document.createElement("img");
+          img.src = this.activeMission.data.object.sprite;
+          var itembox = document.getElementById("inventar");
+          itembox.appendChild(img);
+          console.log(img.src);
 
-        // inventar 
-        console.log("item aufgesammelt");
-        var img = document.createElement('img');
-        img.src = this.exampleactiveMission.data.object.sprite;
-        var itembox = document.getElementById("inventar");
-        itembox.appendChild(img);
-        console.log(img.src);
-        // inventar Ende
-
-
+          //Next sequence
+          this.activeMission.nextSequence();
+        }
       }
       this.scene.loader.npcList.forEach(function (iteration) {
         if (this.getDistanceSquared(iteration.sprite) <= 500) {
-          console.log(iteration.data.name);
-          if (
-            iteration.data.name == this.activeMission.data.respondingChar.name
-          ) {
-            let objs = this.collectedObjects;
-            if (objs.length == 1) {
-              this.activeMission.nextSequence();
-              console.log(this.activeMission.currentState);
+          let ms = iteration.data.mission;
+          if (!this.completedMissions.includes(ms)) {
+            if (this.activeMission == null) {
+              this.activeMission = new Mission(
+                this.scene.cache.json.get(ms + "Data"),
+                this.scene,
+                this
+              );
+              this.activeMission.initializeMission();
             }
+            if (this.activeMission == null) {
+              this.runDialogue("standard");
+            } else if (
+              this.activeMission.data.respondingChar.name == iteration.data.name
+            ) {
+              this.runDialogue(iteration.data.name);
+            }
+          } else {
+            this.runDialogue("completed");
           }
-          this.runDialogue(iteration.data.name);
         }
       }, this);
     }
-  }
-
-  loadMission() {
-    let example = this.scene.cache.json.get("exampleMissionData");
-    let max = this.scene.cache.json.get("maxMissionData");
-    let donna = this.scene.cache.json.get("donnaMissionData");
-    let wirt = this.scene.cache.json.get("wirtMissionData");
-    this.exampleactiveMission = new Mission(example, this.scene, this);
-    this.exampleactiveMission.initializeMission();
-    console.log(this.exampleactiveMission.currentState);
-
-    this.activeMission = new Mission(max, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(donna, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(wirt, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
   }
 
   getCurrentMission() {
@@ -153,28 +146,47 @@ export default class Player {
   }
 
   runDialogue(name) {
-    let npc = this.scene.loader.getNpcByName(name);
-    if (npc != null) {
-      this.inDoalogue = true;
-      if (this.lastBubble != null) {
-        this.lastBubble.forEach(function (b) {
-          b.destroy();
-        });
+    let text = [
+      "Oh hallo, wie geht es dir denn?",
+      "Ich kann gerade leider nicht mit dir reden, ich bin sehr beschäftigt!",
+      "Komm doch später noch einmal!",
+    ];
+    this.inDoalogue = true;
+    if (this.lastBubble != null) {
+      this.lastBubble.forEach(function (b) {
+        b.destroy();
+      });
+    }
+    if (name != "standard") {
+      let npc = this.scene.loader.getNpcByName(name);
+      if (npc != null) {
+        text = npc.dialogues[this.activeMission.currentState];
       }
-      if (this.collectedObjects.length > 0) {
-        this.collectedObjects = [];
-      }
-      let text = npc.dialogues[this.activeMission.currentState];
-      if (text.length > this.bubbleCount) {
-        this.lastBubble = this.speechManager.createSpeechBubble(
-          npc.sprite.x,
-          npc.sprite.y - 60,
-          text[this.bubbleCount]
-        );
-        this.bubbleCount++;
-      } else {
-        this.inDoalogue = false;
-        this.bubbleCount = 0;
+    }
+    if (name == "completed") {
+      text = [
+        "Hey, du hast meine Mission schon abgeschlossen!",
+        "Vielen Dank für deine Unterstützung",
+        "Ich studiere jetzt an der DHBW!",
+      ];
+    }
+    if (text.length > this.bubbleCount) {
+      this.lastBubble = this.speechManager.createSpeechBubble(
+        this.sprite.x,
+        this.sprite.y,
+        text[this.bubbleCount]
+      );
+      this.bubbleCount++;
+    } else {
+      this.inDoalogue = false;
+      this.bubbleCount = 0;
+      if (this.activeMission != null) {
+        if (this.activeMission.currentState == "complete") {
+          this.completedMissions.push(this.activeMission.data.name);
+          this.activeMission = null;
+          console.log("Completed Mission!");
+          console.log(this.completedMissions);
+        }
       }
     }
   }
