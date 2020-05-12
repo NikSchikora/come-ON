@@ -126,7 +126,14 @@ export default class MainScene extends Phaser.Scene {
   }
 
   update() {
+    let enterKey = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.ENTER
+    );
     this.player.update();
+    if (enterKey.isDown) {
+      this.scene.start("indoor");
+      console.log("lets go inside");
+    }
   }
 
   setCounter() {

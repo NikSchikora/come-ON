@@ -7,12 +7,12 @@ export default class MainScene extends Phaser.Scene {
     this.playerSprite = data.player;
   }
   preload() {
-    this.load.spritesheet("player", "IndoorScene/" + this.playerSprite + ".png", {
-      frameWidth: 95,
-      frameHeight: 176,
-    });
-    this.load.tilemapTiledJSON("map-data", "IndoorScene/map/dhbw.json");
-    this.load.image("tileset", "mainScene/map/InteriorDGBW.png");
+    // this.load.spritesheet("player", "mainScene/" + this.playerSprite + ".png", {
+    //   frameWidth: 95,
+    //   frameHeight: 176,
+    // });
+    this.load.tilemapTiledJSON("indoor-data", "indoor/dhbw.json");
+    this.load.image("tileset", "indoor/InteriorDHBW.png");
 
     //Load missions via MissionLoader
     // this.loader = new MissionLoader(this);
@@ -37,7 +37,7 @@ export default class MainScene extends Phaser.Scene {
 
     this.cameras.main.roundPixels = true;
 
-    const map = this.make.tilemap({ key: "map-data" });
+    const map = this.make.tilemap({ key: "indoor-data" });
     const tileset = map.addTilesetImage("Tiles", "tileset");
 
     const backgroundLayer = map.createStaticLayer("Floor", tileset, 0, 0);
