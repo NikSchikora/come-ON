@@ -42,7 +42,8 @@ export default class Player {
 
     this.sprite = scene.physics.add
       .sprite(x, y, "player", 0)
-      .setScale(0.22, 0.22);
+      .setScale(0.22, 0.22)
+      .setSize(14, 20);
 
     this.keys = scene.input.keyboard.createCursorKeys();
     this.speechManager = new Dialogue(this.scene);
