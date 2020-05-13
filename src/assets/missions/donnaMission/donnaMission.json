@@ -1,9 +1,9 @@
 {
   "name": "donnaMission",
   "version": "0.1",
-  "sequence": ["intro", "middle", "complete"],
+  "sequence": ["intro", "during", "complete"],
   "respondingChar": {
-    "name": "Donna",
+    "name": "donna",
     "positionX": 250,
     "positionY": 250,
     "charPath": "assets/npc/donna.png",

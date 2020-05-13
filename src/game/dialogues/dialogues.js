@@ -8,12 +8,12 @@ export default class Dialogue {
   }
 
   createSpeechBubble(x, y, quote) {
-    var bubbleWidth = 700;
+    var bubbleWidth = 500;
     var bubbleHeight = 100;
     var bubblePadding = 10;
     var arrowHeight = bubbleHeight / 4;
 
-    var bubble = this.scene.add.graphics({ x: x - 350, y: y + 100 });
+    var bubble = this.scene.add.graphics({ x: x - 250, y: y + 90 });
 
     //  Bubble shadow
     bubble.fillStyle(0x222222, 0.5);

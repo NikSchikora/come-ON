@@ -100,7 +100,6 @@ export default class Player {
             "../../../playerSelector/shooting_star-Mike_Koenig-1132888100.mp3"
           );
           audio.play();
-          this.exampleactiveMission.objectSprite.destroy();
 
           // inventar
           console.log("item aufgesammelt");
@@ -189,6 +188,9 @@ export default class Player {
       this.inDoalogue = false;
       this.bubbleCount = 0;
       if (this.activeMission != null) {
+        if (this.activeMission.currentState == "intro") {
+          this.activeMission.nextSequence();
+        }
         if (this.activeMission.currentState == "complete") {
           this.completedMissions.push(this.activeMission.data.name);
           this.activeMission = null;
