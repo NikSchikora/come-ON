@@ -6,6 +6,11 @@
     "name": "Maya",
     "positionX": 250,
     "positionY": 250,
-    "charPath": "npcs/maya/maya.png"
+    "charPath": "npcs/maya/maya.png",
+    "object": {
+      "sprite": "missions/mayaMission/sprite.png",
+      "X": 1123,
+      "Y": 2209
+    }
     }
   }

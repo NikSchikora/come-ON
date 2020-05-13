@@ -4,8 +4,13 @@ import Dialogue from "../dialogues/dialogues.js";
 export default class Player {
   constructor(scene, x, y) {
     this.scene = scene;
-    this.activeMission = null;
-    this.exampleactiveMission = null;
+    this.masterActiveMission = null;
+    this.donnaActiveMission = null;
+    this.wirtActiveMission = null;
+    this.eschActiveMission = null;
+    this.mayaActiveMission = null;
+    this.leoActiveMission = null;
+    this.markActiveMission = null;
     this.collectedObjects = [];
 
     //Dialog-Stuff
@@ -87,15 +92,15 @@ export default class Player {
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
       console.log(player.body.x + ":" + player.body.y);
-      if (this.getDistanceSquared(this.exampleactiveMission.objectSprite) <= 500) {
-        this.collectedObjects.push(this.exampleactiveMission.objectSprite);
-        this.exampleactiveMission.objectSprite.destroy();
+      if (this.getDistanceSquared(this.masterActiveMission.objectSprite) <= 500) {
+        this.collectedObjects.push(this.masterActiveMission.objectSprite);
+        this.masterActiveMission.objectSprite.destroy();
 
 
         // inventar 
         console.log("item aufgesammelt");
         var img = document.createElement('img');
-        img.src = this.exampleactiveMission.data.object.sprite;
+        img.src = this.masterActiveMission.data.object.sprite;
         var itembox = document.getElementById("inventar");
         itembox.appendChild(img);
         console.log(img.src);
@@ -107,12 +112,12 @@ export default class Player {
         if (this.getDistanceSquared(iteration.sprite) <= 500) {
           console.log(iteration.data.name);
           if (
-            iteration.data.name == this.activeMission.data.respondingChar.name
+            iteration.data.name == this.masterActiveMission.data.respondingChar.name
           ) {
             let objs = this.collectedObjects;
             if (objs.length == 1) {
-              this.activeMission.nextSequence();
-              console.log(this.activeMission.currentState);
+              this.masterActiveMission.nextSequence();
+              console.log(this.masterActiveMission.currentState);
             }
           }
           this.runDialogue(iteration.data.name);
@@ -122,7 +127,7 @@ export default class Player {
   }
 
   loadMission() {
-    let example = this.scene.cache.json.get("exampleMissionData");
+    let master = this.scene.cache.json.get("masterMissionData");
     let max = this.scene.cache.json.get("maxMissionData");
     let donna = this.scene.cache.json.get("donnaMissionData");
     let wirt = this.scene.cache.json.get("wirtMissionData");
@@ -130,41 +135,43 @@ export default class Player {
     let maya = this.scene.cache.json.get("mayaMissionData");
     let leo = this.scene.cache.json.get("leoMissionData");
     let mark = this.scene.cache.json.get("markMissionData");
-    this.exampleactiveMission = new Mission(example, this.scene, this);
-    this.exampleactiveMission.initializeMission();
-    console.log(this.exampleactiveMission.currentState);
 
-    this.activeMission = new Mission(max, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(donna, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(wirt, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(esch, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(maya, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(leo, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
-
-    this.activeMission = new Mission(mark, this.scene, this);
-    this.activeMission.initializeMission();
-    console.log(this.activeMission.currentState);
+    // master
+    this.masterActiveMission = new Mission(master, this.scene, this);
+    this.masterActiveMission.initializeMission();
+    console.log(this.masterActiveMission.currentState);
+    // // max
+    // this.maxActiveMission = new Mission(max, this.scene, this);
+    // this.maxActiveMission.initializeMission();
+    // console.log(this.maxActiveMission.currentState);
+    // // // donna
+    // this.donnaActiveMission = new Mission(donna, this.scene, this);
+    // this.donnaActiveMission.initializeMission();
+    // console.log(this.donnaActiveMission.currentState);
+    // // // wirt
+    // this.wirtActiveMission = new Mission(wirt, this.scene, this);
+    // this.wirtActiveMission.initializeMission();
+    // console.log(this.wirtActiveMission.currentState);
+    // // esch
+    this.eschActiveMission = new Mission(esch, this.scene, this);
+    this.eschActiveMission.initializeMission();
+    console.log(this.eschActiveMission.currentState);
+    // // maya
+    // this.mayaActiveMission = new Mission(maya, this.scene, this);
+    // this.mayaActiveMission.initializeMission();
+    // console.log(this.mayaActiveMission.currentState);
+    // // leo
+    // this.leoActiveMission = new Mission(leo, this.scene, this);
+    // this.leoActiveMission.initializeMission();
+    // console.log(this.leoActiveMission.currentState);
+    // // mark
+  //   this.markActiveMission = new Mission(mark, this.scene, this);
+  //   this.markActiveMission.initializeMission();
+  //   console.log(this.markActiveMission.currentState);
   }
 
   getCurrentMission() {
-    return this.activeMission;
+    return this.masterActiveMission;
   }
 
   getDistanceSquared(object) {
@@ -185,7 +192,7 @@ export default class Player {
       if (this.collectedObjects.length > 0) {
         this.collectedObjects = [];
       }
-      let text = npc.dialogues[this.activeMission.currentState];
+      let text = npc.dialogues[this.masterActiveMission.currentState];
       if (text.length > this.bubbleCount) {
         this.lastBubble = this.speechManager.createSpeechBubble(
           npc.sprite.x,

@@ -6,6 +6,11 @@
     "name": "Leo",
     "positionX": 250,
     "positionY": 250,
-    "charPath": "npcs/leo/leo.png"
+    "charPath": "npcs/leo/leo.png",
+    "object": {
+      "sprite": "missions/leoMission/sprite.png",
+      "X": 1423,
+      "Y": 2209
+    }
     }
   }

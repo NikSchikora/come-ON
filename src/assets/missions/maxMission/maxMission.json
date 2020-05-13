@@ -6,7 +6,7 @@
     "name": "Max",
     "positionX": 250,
     "positionY": 250,
-    "charPath": "assets/npc/mester.png",
+    "charPath": "assets/npc/max/max.png",
     "dialogues": {
       "intro": [
         "Hallo, Max hier",
@@ -21,7 +21,7 @@
     }
   },
   "object": {
-    "sprite": "missions/exampleMission/sprite.png",
+    "sprite": "missions/maxMission/sprite.png",
     "X": 1323,
     "Y": 2209
   }
