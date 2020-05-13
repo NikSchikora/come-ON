@@ -85,9 +85,18 @@ export default class MainScene extends Phaser.Scene {
       "PersonObject",
       (obj) => obj.name === "StartingPoint"
     );
+
+    const DHBW = map.findObject(
+      "PersonObject",
+      (obj) => obj.name === "DHBW"
+    );
+
+    console.log(DHBW);
+
+
     console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
 
-    this.player = new Player(this, spawnPoint.x, spawnPoint.y);
+    this.player = new Player(this, spawnPoint.x, spawnPoint.y, DHBW.x , DHBW.y);
 
     const camera = this.cameras.main;
     camera.startFollow(this.player.sprite);
@@ -115,10 +124,22 @@ export default class MainScene extends Phaser.Scene {
 
     this.setCounter();
     this.setInventar();
+
+    
+    // console.log(this.player.x + ":" + this.player.y);
   }
 
   update() {
     this.player.update();
+    let enterKey = this.input.keyboard.addKey(
+      Phaser.Input.Keyboard.KeyCodes.ENTER
+    );
+    this.player.update();
+    if (enterKey.isDown) {
+      // this.scene.start("indoor");
+      this.player.openDoor(this);
+      console.log("lets go inside");
+    }
   }
 
   setCounter() {

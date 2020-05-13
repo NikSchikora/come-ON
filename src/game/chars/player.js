@@ -1,12 +1,22 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
 import Dialogue from "../dialogues/dialogues.js";
+// import Indoor from "../scenes/IndoorScene.js";
+
+  // let interactionX, interactionY;
 export default class Player {
-  constructor(scene, x, y) {
+
+  constructor(scene, x, y, interactionX, interactionY) {
     this.scene = scene;
     this.activeMission = null;
     this.collectedObjects = [];
     this.completedMissions = [];
+    this.interactionX = interactionX;
+    this.interactionY = interactionY;
+
+    console.log( interactionX + " : " + interactionY);
+
+
 
     //Dialog-Stuff
     this.inDoalogue = false;
@@ -110,10 +120,19 @@ export default class Player {
           itembox.appendChild(img);
           console.log(img.src);
 
+          console.log( "achtung" + this.interactionX + " : " + this.interactionY);
+        console.log(this.getDistanceSquaredDoor());
+
           //Next sequence
           this.activeMission.nextSequence();
         }
+
+      
+      if(player.body.x <= 1971){
+        console.log("taddaa im at the door " + this.getDistanceSquaredDoor());
       }
+
+
       this.scene.loader.npcList.forEach(function (iteration) {
         console.log("asdasf");
         if (this.getDistanceSquared(iteration.sprite) <= 500) {
@@ -151,6 +170,34 @@ export default class Player {
     let xDif = this.sprite.x - object.x;
     let yDif = this.sprite.y - object.y;
     return xDif * xDif + yDif * yDif;
+  }
+
+  getDistanceSquaredDoor() {
+    let xDif = this.sprite.x - this.interactionX;
+    let yDif = this.sprite.y - this.interactionY;
+    return xDif * xDif + yDif * yDif;
+  }
+
+  getDistanceSquaredOutside() {
+    let xDif = this.sprite.x - this.interactionX;
+    let yDif = this.sprite.y - this.interactionY;
+    return xDif * xDif + yDif * yDif;
+  }
+
+  openDoor(input){
+      if (this.getDistanceSquaredDoor() <= 2600) {
+        console.log("PLAYER: indoor yay");
+        input.scene.start("indoor");
+        console.log("PLAYER: indoor yay ende");
+      }
+    }
+
+  closeDoor(input){
+        if (this.getDistanceSquaredOutside() <= 2600) {
+          console.log("PLAYER: outside yay");
+          input.scene.start("mainScene");
+          console.log("PLAYER: outside yay ende");
+        }
   }
 
   runDialogue(name) {

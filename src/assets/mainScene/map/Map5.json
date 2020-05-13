@@ -55,6 +55,17 @@
                  "width":39,
                  "x":1949.5,
                  "y":2933
+                }, 
+                {
+                 "height":27,
+                 "id":14,
+                 "name":"DHBW",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":29.75,
+                 "x":1953.25,
+                 "y":2848.25
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -458,7 +469,7 @@
          "y":0
         }],
  "nextlayerid":27,
- "nextobjectid":14,
+ "nextobjectid":17,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.3.3",
