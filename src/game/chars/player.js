@@ -113,32 +113,33 @@ export default class Player {
           //Next sequence
           this.activeMission.nextSequence();
         }
-        this.scene.loader.npcList.forEach(function (iteration) {
-          if (this.getDistanceSquared(iteration.sprite) <= 500) {
-            let ms = iteration.data.mission;
-            if (!this.completedMissions.includes(ms)) {
-              if (this.activeMission == null) {
-                this.activeMission = new Mission(
-                  this.scene.cache.json.get(ms + "Data"),
-                  this.scene,
-                  this
-                );
-                this.activeMission.initializeMission();
-              }
-              if (this.activeMission == null) {
-                this.runDialogue("standard");
-              } else if (
-                this.activeMission.data.respondingChar.name ==
-                iteration.data.name
-              ) {
-                this.runDialogue(iteration.data.name);
-              }
-            } else {
-              this.runDialogue("completed");
-            }
-          }
-        }, this);
       }
+      this.scene.loader.npcList.forEach(function (iteration) {
+        console.log("asdasf");
+        if (this.getDistanceSquared(iteration.sprite) <= 500) {
+          console.log("asdads" + iteration);
+          let ms = iteration.data.mission;
+          if (!this.completedMissions.includes(ms)) {
+            if (this.activeMission == null) {
+              this.activeMission = new Mission(
+                this.scene.cache.json.get(ms + "Data"),
+                this.scene,
+                this
+              );
+              this.activeMission.initializeMission();
+            }
+            if (this.activeMission == null) {
+              this.runDialogue("standard");
+            } else if (
+              this.activeMission.data.respondingChar.name == iteration.data.name
+            ) {
+              this.runDialogue(iteration.data.name);
+            }
+          } else {
+            this.runDialogue("completed");
+          }
+        }
+      }, this);
     }
   }
 

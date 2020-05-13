@@ -47,6 +47,7 @@ export default class MissionLoader {
       let data = this.scene.cache.json.get(npc + "Data");
       let char = new NPC(this.scene, data);
       this.npcList.push(char);
+      console.log(char);
     }, this);
   }
 
