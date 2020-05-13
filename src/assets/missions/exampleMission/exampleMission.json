@@ -1,7 +1,7 @@
 {
   "name": "exampleMission",
   "version": "0.1",
-  "sequence": ["intro", "complete"],
+  "sequence": ["intro", "during", "complete"],
   "respondingChar": {
     "name": "mester",
     "displayName": "Mester",
