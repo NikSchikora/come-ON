@@ -126,6 +126,10 @@ export default class Player {
     let max = this.scene.cache.json.get("maxMissionData");
     let donna = this.scene.cache.json.get("donnaMissionData");
     let wirt = this.scene.cache.json.get("wirtMissionData");
+    let esch = this.scale.cache.json.get("eschMissionData");
+    let maya = this.scene.cache.json.get("mayaMissionData");
+    let leo = this.scene.cache.json.get("leoMissionData");
+    let mark = this.scene.cache.json.get("markMissionData");
     this.exampleactiveMission = new Mission(example, this.scene, this);
     this.exampleactiveMission.initializeMission();
     console.log(this.exampleactiveMission.currentState);
@@ -139,6 +143,22 @@ export default class Player {
     console.log(this.activeMission.currentState);
 
     this.activeMission = new Mission(wirt, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(esch, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(maya, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(leo, this.scene, this);
+    this.activeMission.initializeMission();
+    console.log(this.activeMission.currentState);
+
+    this.activeMission = new Mission(mark, this.scene, this);
     this.activeMission.initializeMission();
     console.log(this.activeMission.currentState);
   }
