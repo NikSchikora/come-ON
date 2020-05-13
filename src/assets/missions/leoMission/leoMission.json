@@ -1,0 +1,11 @@
+{
+    "name": "leoMission",
+    "version": "0.1",
+    "sequence": ["intro", "middle", "complete"],
+    "respondingChar": {
+    "name": "Leo",
+    "positionX": 250,
+    "positionY": 250,
+    "charPath": "npcs/leo/leo.png"
+    }
+  }
