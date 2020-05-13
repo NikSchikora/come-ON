@@ -126,7 +126,7 @@ export default class Player {
     let max = this.scene.cache.json.get("maxMissionData");
     let donna = this.scene.cache.json.get("donnaMissionData");
     let wirt = this.scene.cache.json.get("wirtMissionData");
-    let esch = this.scale.cache.json.get("eschMissionData");
+    let esch = this.scene.cache.json.get("eschMissionData");
     let maya = this.scene.cache.json.get("mayaMissionData");
     let leo = this.scene.cache.json.get("leoMissionData");
     let mark = this.scene.cache.json.get("markMissionData");
