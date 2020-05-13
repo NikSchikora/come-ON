@@ -153,9 +153,9 @@ export default class Player {
     // this.wirtActiveMission.initializeMission();
     // console.log(this.wirtActiveMission.currentState);
     // // esch
-    this.eschActiveMission = new Mission(esch, this.scene, this);
-    this.eschActiveMission.initializeMission();
-    console.log(this.eschActiveMission.currentState);
+    // this.eschActiveMission = new Mission(esch, this.scene, this);
+    // this.eschActiveMission.initializeMission();
+    // console.log(this.eschActiveMission.currentState);
     // // maya
     // this.mayaActiveMission = new Mission(maya, this.scene, this);
     // this.mayaActiveMission.initializeMission();
