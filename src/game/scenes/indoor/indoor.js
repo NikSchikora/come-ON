@@ -4,7 +4,7 @@ import MissionLoader from "../../mission/missionLoader.js";
 
 export default class Indoor extends Phaser.Scene {
   init(data) {
-    this.playerSprite = data.player;
+    this.player = data.player;
   }
   preload() {
     this.load.spritesheet("player", "mainScene/" + this.playerSprite + ".png", {
@@ -50,7 +50,7 @@ export default class Indoor extends Phaser.Scene {
     const shelves = indoor.createStaticLayer("Shelves", indoorset, 0, 0);
     const deko2 = indoor.createStaticLayer("Deko2", indoorset, 0, 0);
     const balck = indoor.createStaticLayer("Balck", indoorset, 0, 0);
-    
+
     // const firstBorder = map.createStaticLayer("firstBorder", tileset, 0, 0);
     wall.setCollisionByProperty({ collides: true });
     border.setCollisionByProperty({ collides: true });
@@ -62,7 +62,7 @@ export default class Indoor extends Phaser.Scene {
     shelves.setCollisionByProperty({ collides: true });
     balck.setCollisionByProperty({ collides: true });
     deko2.setCollisionByProperty({ collides: true });
-   
+
     const spawnPoint = indoor.findObject(
       "playerObject",
       (obj) => obj.name === "StartingInterior"
@@ -76,10 +76,10 @@ export default class Indoor extends Phaser.Scene {
     console.log("here ist outside: " + outside);
     console.log("here ist spawnpoint: " + spawnPoint);
 
-
     console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
-
-    this.player = new Player(this, spawnPoint.x, spawnPoint.y, outside.x, outside.y);
+    console.log(this.player);
+    this.player.body.x = spawnPoint.x;
+    this.player.body.y = spawnPoint.y;
 
     const camera = this.cameras.main;
     camera.startFollow(this.player.sprite);
@@ -96,8 +96,6 @@ export default class Indoor extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, deko2);
     this.physics.add.collider(this.player.sprite, shelves);
 
-   
-
     // this.loader.create();
 
     // this.setCounter();
@@ -106,7 +104,7 @@ export default class Indoor extends Phaser.Scene {
 
   update() {
     this.player.update();
-    
+
     let enterKey = this.input.keyboard.addKey(
       Phaser.Input.Keyboard.KeyCodes.ENTER
     );
@@ -115,6 +113,4 @@ export default class Indoor extends Phaser.Scene {
       console.log("lets go outside");
     }
   }
-
- 
 }

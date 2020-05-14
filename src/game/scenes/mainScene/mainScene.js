@@ -79,25 +79,26 @@ export default class MainScene extends Phaser.Scene {
     rocks.setCollisionByProperty({ collides: true });
     forest.setCollisionByProperty({ collides: true });
     cave.setCollisionByProperty({ collides: true });
-    
 
     const spawnPoint = map.findObject(
       "PersonObject",
       (obj) => obj.name === "StartingPoint"
     );
 
-    const DHBW = map.findObject(
-      "PersonObject",
-      (obj) => obj.name === "DHBW"
-    );
+    const DHBW = map.findObject("PersonObject", (obj) => obj.name === "DHBW");
 
     console.log(DHBW);
 
-
     console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
-
-    this.player = new Player(this, spawnPoint.x, spawnPoint.y, DHBW.x , DHBW.y);
-
+    if (this.player == null) {
+      this.player = new Player(
+        this,
+        spawnPoint.x,
+        spawnPoint.y,
+        DHBW.x,
+        DHBW.y
+      );
+    }
     const camera = this.cameras.main;
     camera.startFollow(this.player.sprite);
     camera.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -125,7 +126,6 @@ export default class MainScene extends Phaser.Scene {
     this.setCounter();
     this.setInventar();
 
-    
     // console.log(this.player.x + ":" + this.player.y);
   }
 
