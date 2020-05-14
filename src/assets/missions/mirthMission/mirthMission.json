@@ -1,0 +1,33 @@
+{
+    "name": "mirthMission",
+    "version": "0.1",
+    "sequence": [
+        "intro",
+        "middle",
+        "complete"
+    ],
+    "respondingChar": {
+        "name": "Mirth",
+        "positionX": 250,
+        "positionY": 250,
+        "charPath": "assets/npc/mirth.png",
+        "dialogues": {
+            "intro": [
+                "Servus!",
+                "Ich bin der eingesperrte Dozent.",
+                "Dieser Wester..."
+            ],
+            "middle": [
+                ""
+            ],
+            "complete": [
+                ""
+            ]
+        }
+    },
+    "object": {
+        "sprite": "missions/mirthMission/sprite.png",
+        "X": 1328,
+        "Y": 2594
+    }
+}

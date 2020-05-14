@@ -1,0 +1,28 @@
+{
+    "name": "mirth",
+    "x": 2212,
+    "y": 2065,
+    "sprite": "npcs/mirth/mirth.png",
+    "mission": "mirthMission",
+    "dialogue": {
+      "intro": [
+        "Haaalloooo? HALLO! Ich bin hier!",
+        "...",
+        "Endlich hat mich jemand gefunden, oh Gott! Ich war lange Zeit hier eingesperrt.. hat sich angefühlt wie Jahrzehnte.",
+        "...",
+        "Jaja ich habe hier tatsächlich einen älteren Vorrat an Konserven gefunden und habe mir immer lecker was zu Essen gemacht..irgendwie..",
+        "Nur ich konnte nie erkennen was ich da überhaupt essen, denn ich habe vor einiger Zeit meine Brille verloren.",
+        "Nunja.."
+      ],
+      "during": [
+        "Ach du bists, hab dich erst nicht erkannt.. ohne Brille.. hahhaaha..."
+      ],
+      "complete": [
+        "Oh du bist ja doch jünger als gedacht! Jetzt seh ich dich endlich gescheit!",
+        "Danke dir!"
+      ],
+      "after": [
+        "Endlich Freiheit!"
+      ]
+    }
+  }

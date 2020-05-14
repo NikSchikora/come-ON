@@ -6,7 +6,7 @@
     "name": "max",
     "positionX": 250,
     "positionY": 250,
-    "charPath": "assets/npc/mester.png"
+    "charPath": "assets/npc/max.png"
   },
   "object": {
     "sprite": "",
