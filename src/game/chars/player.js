@@ -4,6 +4,10 @@ import Dialogue from "../dialogues/dialogues.js";
 // import Indoor from "../scenes/IndoorScene.js";
 
 // let interactionX, interactionY;
+// let missioncounter;
+const Pause = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
 export default class Player {
   constructor(scene, x, y, interactionX, interactionY) {
     this.scene = scene;
@@ -12,6 +16,7 @@ export default class Player {
     this.completedMissions = [];
     this.interactionX = interactionX;
     this.interactionY = interactionY;
+    this.missioncounter = 0;
 
     console.log(interactionX + " : " + interactionY);
 
@@ -202,6 +207,8 @@ export default class Player {
       "Ich kann gerade leider nicht mit dir reden, ich bin sehr beschäftigt!",
       "Komm doch später noch einmal!",
     ];
+
+   
     this.inDoalogue = true;
     if (this.lastBubble != null) {
       this.lastBubble.forEach(function (b) {
@@ -220,6 +227,7 @@ export default class Player {
         "Vielen Dank für deine Unterstützung",
         "Ich studiere jetzt an der DHBW!",
       ];
+      
     }
     if (text.length > this.bubbleCount) {
       this.lastBubble = this.speechManager.createSpeechBubble(
@@ -240,8 +248,85 @@ export default class Player {
           this.activeMission = null;
           console.log("Completed Mission!");
           console.log(this.completedMissions);
+          this.missioncounter++;
+          console.log("the counter is: " + this.missioncounter);
+          this.credits();
         }
       }
     }
+    // this.wait();
+    
+    
   }
+
+  // Sleep(milliseconds) {
+  //   return new Promise(resolve => setTimeout(resolve, milliseconds));
+  // }
+  // wait(){
+  //   .time.events.add(Phaser.Timer.SECOND * 4, this.credits, this);
+  // }
+
+  credits(){
+    let credit = [
+      "...*handy klingeln*...",
+      "WESTER: Hallo?",
+      "Ist da wer dran?",
+      "... ...",
+      "Naja egal...",
+      "An der DHBW treffen gerade so viele Anmeldezettel ein, so viele neue Studenten!",
+      "Jetzt kann die Uni wiedereröffnen! Fantastische Arbeit! Das müssen wir feiern.",
+      "Eine solche Leistung bleibt natürlich nicht ungeehrt.",
+      "Neben der Tatsache, dass du Teil des Spie... Teil dieser Welt sein darfst, bekommst du...",
+      "ein...MINI HANUTA!!!!",
+      "Oh. Tut mir leid. Da hat Professor Klee gerade reingerufen...der liebt einfach diese Mini Hanutas. HAHAHA",
+      "Was du als Belohnung bekommst. überlege ich mir auf jeden Fall noch *vielleicht gibts ja eine Eherntafel...die würde sich bestimmt schickt im Eingang machen*",
+      "MIRTH: *gib mal das Telefon her, Wester....Hallo? Hört man mich?",
+      "Es scheint als wäre nun eine gute Stichprobe für meine Erhebungen verfügbar.",
+      "Also vielen Dank. Du bist ein wahrer Held! Ein DHBW-Held!",
+      "Im Hintergrund halfen dir übrigens einige fleißige Hände....",
+      "Dalma Balogh, Katharina Barth, Julia Henschel, Kristin Zeger und last but not least Niklas Schikora",
+      "Ganz tolle Studenten sind das!",
+      "Vielleicht kannst du denen mal danke sagen.",
+      "Die müssten auch hier in der DHBW sein....",
+      "Bis bald!"
+    ]
+    if(this.missioncounter == 1){
+        console.log("Achtung missioncounter ist auf 1");
+        // await Pause(3000);
+        this.speechManager.createSpeechBubble(
+        this.sprite.x,
+        this.sprite.y - 50,
+        credit
+        );
+    }
+    if (credit.length > this.bubbleCount) {
+      this.lastBubble = this.speechManager.createSpeechBubble(
+        this.sprite.x,
+        this.sprite.y,
+        credit[this.bubbleCount]
+      );
+      this.bubbleCount++;
+    }
+    if (this.lastBubble != null) {
+      this.lastBubble.forEach(function (b) {
+        b.destroy();
+      });
+    }
+    
+}
+
+starting(){
+  let start = [
+    "*...hm...*",
+    "*Das ist also meine neue Uni...*",
+    "*schön hier...*",
+    "*dann suche ich mal den Herrn Wetter, nein , Wester, so heißt er. *",
+    "*Er sollte am Eingang der DHBW stehen.*"
+  ]
+  this.speechManager.createSpeechBubble(
+    this.sprite.x,
+    this.sprite.y,
+    start
+  );
+}
 }

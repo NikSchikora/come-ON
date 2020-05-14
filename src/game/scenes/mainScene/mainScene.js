@@ -135,25 +135,45 @@ export default class MainScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.ENTER
     );
     this.player.update();
+    this.player.starting();
     if (enterKey.isDown) {
       // this.scene.start("indoor");
       this.player.openDoor(this);
       console.log("lets go inside");
     }
+    this.setCurentCounter();
+    // this.wait();
   }
 
   setCounter() {
     console.log("counter ahoi!");
-    var counter = this.loader.missioncounter;
+    var counter = this.player.missioncounter;
     var counterbox = document.getElementById("counterbox");
     var counternumber = document.getElementById("counter");
     counternumber.innerHTML = counter;
     counterbox.style.visibility = "visible";
   }
 
+  setCurentCounter(){
+    var counter = this.player.missioncounter;
+    var counternumber = document.getElementById("counter");
+    counternumber.innerHTML = counter;
+  }
+
   setInventar() {
     console.log("inventar ahoi!");
     var inventarbox = document.getElementById("inventarbox");
     inventarbox.style.visibility = "visible";
+  }
+
+  // wait(){
+  //   map.time.events.add(Phaser.Timer.SECOND * 4, this.checkCounter, this);
+  //   }
+
+  checkCounter(){
+    var counter = this.player.missioncounter;
+    if(counter == 1){
+      console.log("set time out funktioniert");
+    }
   }
 }
