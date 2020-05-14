@@ -1,9 +1,9 @@
 {
   "name": "mester",
-  "x": 1691,
-  "y": 2720,
+  "x": 1827,
+  "y": 2870,
   "sprite": "npcs/mester/mester.png",
-  "mission": "exampleMission",
+  "mission": "masterMission",
   "dialogue": {
     "intro": [
       "...",
@@ -35,17 +35,13 @@
       "Also lauf los und such nach meinem Schlüssel. Er müsste hier irgendwo in der Nähe herumliegen.",
       "Wenn du ihn gefunden hast, sprich einfach nochmal mit mir."
     ],
-    "during": [
-      "...mein Schlüssel?"
-    ],
+    "during": ["...mein Schlüssel?"],
     "complete": [
       "OH! Mein Schlüssel! Vielen Dank!",
       "Jetzt kanns losgehen. Die Türen sind offen und erwarten neue Studenten!",
       "Du bist nun für weitere Missionen gewappnet. Jetzt weißt du ja, wie es hier funktioniert und was ich mit Gegenleistungen meinte.",
       "Viel Erfolg!"
     ],
-    "after": [
-      "...meine Studenten?"
-    ]
+    "after": ["...meine Studenten?"]
   }
 }

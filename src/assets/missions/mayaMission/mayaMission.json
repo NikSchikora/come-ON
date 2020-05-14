@@ -1,0 +1,28 @@
+{
+    "name": "mayaMission",
+    "version": "0.1",
+    "sequence": ["intro", "middle", "complete"],
+    "respondingChar": {
+    "name": "Maya",
+    "positionX": 250,
+    "positionY": 250,
+    "charPath": "npcs/maya/maya.png",
+    "dialogues": {
+      "intro": [
+        "Hallo, Maya hier",
+        "Hab mich verlaufen"
+      ],
+      "middle": [
+        "hm...wo bin ich hier nochmal?"
+      ],
+      "complete": [
+        "Cool.Danke. Jetzt muss ich nur noch herausfinden, wo ich auf der Karte bin...."
+      ]
+    }
+  },
+  "object": {
+    "sprite": "missions/mayaMission/sprite.png",
+    "X": 2285,
+    "Y": 1919
+  }
+}

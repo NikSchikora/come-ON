@@ -3,12 +3,16 @@ import Mission from "./mission";
 
 //Array of all missions, add new missions by name here
 const missions = [
-  "exampleMission",
+  "masterMission",
   "maxMission",
   "donnaMission",
   "wirtMission",
+  "eschMission",
+  "mayaMission",
+  "leoMission",
+  "markMission",
 ];
-const npcs = ["mester", "max", "donna", "wirt"];
+const npcs = ["mester", "max", "donna", "wirt", "esch", "maya", "leo", "mark"];
 let missioncounter;
 
 export default class MissionLoader {
@@ -35,6 +39,7 @@ export default class MissionLoader {
     }, this);
     //Load NPCS from array
     npcs.forEach(function iterateNPCS(npc) {
+      console.log("Loaded npc for mission " + npc + "!");
       //Load NPC-Data
       this.scene.load.json(npc + "Data", "npcs/" + npc + "/" + npc + ".json");
       //Load Sprite-Data

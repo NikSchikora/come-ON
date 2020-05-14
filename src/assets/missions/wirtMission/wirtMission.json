@@ -23,7 +23,9 @@
       }
     },
     "object": {
-      
+      "sprite": "missions/wirtMission/sprite.png",
+    "X": 3228,
+    "Y": 216    
       
     }
   }

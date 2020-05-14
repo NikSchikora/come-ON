@@ -159,7 +159,7 @@ export default class Player {
     }
   }
   getCurrentMission() {
-    return this.activeMission;
+    return this.masterActiveMission;
   }
 
   getDistanceSquared(object) {

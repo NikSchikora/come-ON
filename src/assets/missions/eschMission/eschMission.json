@@ -1,0 +1,28 @@
+{
+  "name": "eschMission",
+  "version": "0.1",
+  "sequence": ["intro", "middle", "complete"],
+  "respondingChar": {
+    "name": "Esch",
+    "positionX": 300,
+    "positionY": 300,
+    "charPath": "assets/npc/esch/esch.png",
+    "dialogues": {
+      "intro": [
+        "Hallo, esch hier",
+        "Hab mich verlaufen"
+      ],
+      "middle": [
+        "hm...wo bin ich hier nochmal?"
+      ],
+      "complete": [
+        "Cool.Danke. Jetzt muss ich nur noch herausfinden, wo ich auf der Karte bin....bin übrigens esch"
+      ]
+    }
+  },
+  "object": {
+    "sprite": "missions/eschMission/sprite.png",
+    "X": 1832,
+    "Y": 282
+  }
+}
