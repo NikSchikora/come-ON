@@ -1,5 +1,5 @@
 {
-  "name": "exampleMission",
+  "name": "masterMission",
   "version": "0.1",
   "sequence": ["intro", "during", "complete"],
   "respondingChar": {
@@ -28,7 +28,7 @@
     }
   },
   "object": {
-    "sprite": "missions/exampleMission/sprite.png",
+    "sprite": "missions/masterMission/sprite.png",
     "X": 1328,
     "Y": 2594
   }

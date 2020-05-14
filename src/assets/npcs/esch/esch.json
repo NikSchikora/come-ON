@@ -1,0 +1,14 @@
+{
+  "name":"esch",
+  "x": 867,
+  "y": 565,
+  "sprite": "npcs/esch/esch.png",
+  "dialogue": {
+    "intro": [
+      "WAS GEEEHT !!!!"
+    ],
+    "complete": [
+      "escheschesch"
+    ]
+  }
+}    

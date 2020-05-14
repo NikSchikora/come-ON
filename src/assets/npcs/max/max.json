@@ -1,7 +1,7 @@
 {
   "name": "max",
-  "x": 2240,
-  "y": 2846,
+  "x": 1279,
+  "y": 2252,
   "sprite": "npcs/max/max.png",
   "mission": "maxMission",
   "dialogue": {

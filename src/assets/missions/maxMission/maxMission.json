@@ -6,11 +6,18 @@
     "name": "max",
     "positionX": 250,
     "positionY": 250,
-    "charPath": "assets/npc/mester.png"
+    "charPath": "assets/npc/max/max.png",
+    "dialogues": {
+      "intro": ["Hallo, Max hier", "Hab mich verlaufen"],
+      "middle": ["hm...wo bin ich hier nochmal?"],
+      "complete": [
+        "Cool.Danke. Jetzt muss ich nur noch herausfinden, wo ich auf der Karte bin...."
+      ]
+    }
   },
   "object": {
-    "sprite": "",
-    "X": 1323,
-    "Y": 2209
+    "sprite": "missions/maxMission/sprite.png",
+    "X": 2486,
+    "Y": 1336
   }
 }

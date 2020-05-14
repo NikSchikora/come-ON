@@ -1,7 +1,7 @@
 {
   "name": "donna",
-  "x": 2212,
-  "y": 2065,
+  "x": 3110,
+  "y": 2706,
   "sprite": "npcs/donna/donna.png",
   "mission": "donnaMission",
   "dialogue": {

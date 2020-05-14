@@ -1,0 +1,16 @@
+{
+    "name": "markMission",
+    "version": "0.1",
+    "sequence": ["intro", "middle", "complete"],
+    "respondingChar": {
+    "name": "Mark",
+    "positionX": 250,
+    "positionY": 250,
+    "charPath": "npcs/mark/mark.png",
+    "object": {
+      "sprite": "missions/markMission/sprite.png",
+      "X": 1123,
+      "Y": 2109
+    }
+    }
+  }
