@@ -2,5 +2,35 @@
     "name":"maya",
     "x": 1225,
     "y": 268,
-    "sprite": "npcs/maya/maya.png"
-}    
+    "sprite": "npcs/maya/maya.png",
+    "mission": "mayaMission",
+    "dialogue": {
+      "intro": [
+        "Jetzt hab ichs! Hierlang ... Moment… Nein… ",
+        "An diesem Baum vorbei und dann… Warte - war ich hier nicht schon mal??",
+        "*bemerkt Spieler*",
+        "Guten Tag. Oder ist es bereits Mittag?",
+        "...",
+        "Oh, was ich hier treibe? Nun ja es ist so: Ich wollte dieses Jahr mein Studium hier ",
+        "beginnen, aber ich war einfach noch nie ganz auf mich allein gestellt.",
+        "Es ist nicht so, dass ich großes Heimweh hätte, nur bin ich immer so verpeilt! Der Plan war den Weg von meiner potenziellen Wohnung, in die ich hier beziehen würde, zur Schule abzulaufen… ",
+        "Aber ich hab mich wohl mal wieder verirrt. In diesem Wald habe ich nicht mal Netz. Ich weiß einfach nicht, was ich tun soll.",
+        "Wie soll ich studieren, wenn ich mich ständig verlaufe? Selbst wenn du mich hier raus führst, kann ich mir den Weg bestimmt nicht merken. Das wird wohl nichts.",
+        "Nur so etwas wie eine Karte würde mir helfen… Genug geredet, ich versuche weiter einen Weg zu finden, man sieht sich!"
+      ],
+      "during": [
+        "Da! … Ach nein, da war ich schon."
+      ],
+      "complete": [
+        "Was hast du da? Für mich?",
+        "...",
+        "Das ist großartig! Von nun an werde ich mich hier zurecht finden.",
+        "Ich kann wohl doch hier studieren. Du bist mein Held!",
+        "Dann kann ich den Tag hier im Wald noch genießen. ",
+        "Übrigens ich heiße Maya, schön dich kennenzulernen."
+      ],
+      "after": [
+        "Immer schön dem Weg folgen."
+      ]
+    }
+  }

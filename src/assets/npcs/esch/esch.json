@@ -3,12 +3,30 @@
   "x": 867,
   "y": 565,
   "sprite": "npcs/esch/esch.png",
+  "mission": "eschMission",
   "dialogue": {
     "intro": [
-      "WAS GEEEHT !!!!"
+      "Hallo, Champ!",
+      "...",
+      "Was sagst du da? Ob ich hier studieren möchte? – Klar will ich das, sonst wär ich nicht hier. Nur leider weiß ich nicht Woingenau.",
+      "...",
+      "Onlinemedien? Klingt Echnatoll. Aber wir sind ja noch ganz Icognito. Ich heiße Esch.",
+      "Wie wärs, wenn du mir hilfst mich zu entscheiden? Ich will der Allerbeste sein, deshalb brauche ich etwas, das mir dabei hilft.",
+      "Nur leider weiß ich Onix! Wenn du etwas findest, das mir einen Sonnentag beschert, bring es bitte Blitza-schnell zu mir.",
+      "Bis Dedenne."
+    ],
+    "during": [
+      "Hat es bei dir schon Klikk gemacht? Tut mir Ledyba dann Gehweiher."
     ],
     "complete": [
-      "escheschesch"
+      "Das ging ja Rattfratz! Was hast du mitgebracht?",
+      "...",
+      "Das ist Absol-ut das beste Geschenk, das du mir hättest machen können!! Danke!",
+      "Da du alles so gut im Meistagriff hast werde ich mich mit Turbotempo an der DHBW anmelden und alle Kämpfe gewinnen!"
+    ],
+    "after": [
+      "Mit so gutem Kommandutan wird das schon kein Schuss in den Ofen."
     ]
   }
-}    
+}
+   
