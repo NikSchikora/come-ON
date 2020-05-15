@@ -90,6 +90,7 @@ export default class Player {
     }
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
+      console.log(this.sprite.x + " : " + this.sprite.y);
       if (this.activeMission != null) {
         if (this.getDistanceSquared(this.activeMission.objectSprite) <= 500) {
           this.collectedObjects.push(this.activeMission.objectSprite);
