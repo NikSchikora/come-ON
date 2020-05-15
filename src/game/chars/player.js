@@ -13,8 +13,6 @@ export default class Player {
     this.interactionX = interactionX;
     this.interactionY = interactionY;
 
-    console.log(interactionX + " : " + interactionY);
-
     //Dialog-Stuff
     this.inDoalogue = false;
     this.lastBubble = null;
@@ -92,13 +90,6 @@ export default class Player {
     }
 
     if (Phaser.Input.Keyboard.JustDown(cursors.space)) {
-      console.log(player.body.x + ":" + player.body.y);
-      console.log(
-        "Camera: " +
-          this.scene.cameras.main.centerX +
-          " : " +
-          this.scene.cameras.main.centerY
-      );
       if (this.activeMission != null) {
         if (this.getDistanceSquared(this.activeMission.objectSprite) <= 500) {
           this.collectedObjects.push(this.activeMission.objectSprite);
@@ -110,52 +101,50 @@ export default class Player {
           audio.play();
 
           // inventar
-          console.log("item aufgesammelt");
           var img = document.createElement("img");
           img.src = this.activeMission.data.object.sprite;
           var itembox = document.getElementById("inventar");
           itembox.appendChild(img);
-          console.log(img.src);
-
-          console.log(
-            "achtung" + this.interactionX + " : " + this.interactionY
-          );
-          console.log(this.getDistanceSquaredDoor());
 
           //Next sequence
           this.activeMission.nextSequence();
         }
       }
-      if (player.body.x <= 1971) {
-        console.log("taddaa im at the door " + this.getDistanceSquaredDoor());
-      }
-
-      this.scene.loader.npcList.forEach(function (iteration) {
-        console.log("asdasf");
-        if (this.getDistanceSquared(iteration.sprite) <= 500) {
-          console.log("asdads" + iteration);
-          let ms = iteration.data.mission;
-          if (!this.completedMissions.includes(ms)) {
-            if (this.activeMission == null) {
-              this.activeMission = new Mission(
-                this.scene.cache.json.get(ms + "Data"),
-                this.scene,
-                this
-              );
-              this.activeMission.initializeMission();
+      if (this.completedMissions.length < 3) {
+        this.scene.loader.npcList.forEach(function (iteration) {
+          if (this.getDistanceSquared(iteration.sprite) <= 500) {
+            let ms = iteration.data.mission;
+            if (!this.completedMissions.includes(ms)) {
+              if (this.activeMission == null) {
+                this.activeMission = new Mission(
+                  this.scene.cache.json.get(ms + "Data"),
+                  this.scene,
+                  this
+                );
+                this.activeMission.initializeMission();
+              }
+              if (
+                this.activeMission != null &&
+                !(
+                  this.activeMission.data.respondingChar.name ==
+                  iteration.data.name
+                )
+              ) {
+                this.runDialogue("standard");
+              } else if (
+                this.activeMission.data.respondingChar.name ==
+                iteration.data.name
+              ) {
+                this.runDialogue(iteration.data.name);
+              }
+            } else {
+              this.runDialogue("completed");
             }
-            if (this.activeMission == null) {
-              this.runDialogue("standard");
-            } else if (
-              this.activeMission.data.respondingChar.name == iteration.data.name
-            ) {
-              this.runDialogue(iteration.data.name);
-            }
-          } else {
-            this.runDialogue("completed");
           }
-        }
-      }, this);
+        }, this);
+      } else {
+        this.runDialogue("credits");
+      }
     }
   }
   getCurrentMission() {
@@ -182,17 +171,13 @@ export default class Player {
 
   openDoor(input) {
     if (this.getDistanceSquaredDoor() <= 2600) {
-      console.log("PLAYER: indoor yay");
       input.scene.start("indoor", { player: this });
-      console.log("PLAYER: indoor yay ende");
     }
   }
 
   closeDoor(input) {
     if (this.getDistanceSquaredOutside() <= 2600) {
-      console.log("PLAYER: outside yay");
       input.scene.start("mainScene", { player: this });
-      console.log("PLAYER: outside yay ende");
     }
   }
 
@@ -221,6 +206,32 @@ export default class Player {
         "Ich studiere jetzt an der DHBW!",
       ];
     }
+    if (name == "credits") {
+      text = [
+        "...*handy klingeln*...",
+        "WESTER: Hallo?",
+        "Ist da wer dran?",
+        "... ...",
+        "Naja egal...",
+        "An der DHBW treffen gerade so viele Anmeldezettel ein, so viele neue Studenten!",
+        "Jetzt kann die Uni wiedereröffnen! Fantastische Arbeit! Das müssen wir feiern.",
+        "Eine solche Leistung bleibt natürlich nicht ungeehrt.",
+        "Neben der Tatsache, dass du Teil des Spie... Teil dieser Welt sein darfst, bekommst du...",
+        "ein...MINI HANUTA!!!!",
+        "Oh. Tut mir leid. Da hat Professor Klee gerade reingerufen...der liebt einfach diese Mini Hanutas. HAHAHA",
+        "Was du als Belohnung bekommst. überlege ich mir auf jeden Fall noch *vielleicht gibts ja eine Eherntafel...die würde sich bestimmt schickt im Eingang machen*",
+        "MIRTH: *gib mal das Telefon her, Wester....Hallo? Hört man mich?",
+        "Es scheint als wäre nun eine gute Stichprobe für meine Erhebungen verfügbar.",
+        "Also vielen Dank. Du bist ein wahrer Held! Ein DHBW-Held!",
+        "Im Hintergrund halfen dir übrigens einige fleißige Hände....",
+        "Dalma Balogh, Katharina Barth, Julia Henschel, Kristin Zeger und last but not least Niklas Schikora",
+        "Ganz tolle Studenten sind das!",
+        "Vielleicht kannst du denen mal danke sagen.",
+        "Die müssten auch hier in der DHBW sein....",
+        "Bis bald!",
+        "The End",
+      ];
+    }
     if (text.length > this.bubbleCount) {
       this.lastBubble = this.speechManager.createSpeechBubble(
         this.sprite.x,
@@ -237,11 +248,27 @@ export default class Player {
         }
         if (this.activeMission.currentState == "complete") {
           this.completedMissions.push(this.activeMission.data.name);
+          this.scene.setCurentCounter();
           this.activeMission = null;
-          console.log("Completed Mission!");
-          console.log(this.completedMissions);
+          this.clearInventory();
         }
       }
     }
+    if (this.completedMissions.length == 3) {
+      if (!this.inDoalogue) {
+        setTimeout(this.runDialogue("credits"), 5000, this);
+      }
+      console.log(this.bubbleCount);
+      console.log(text[this.bubbleCount]);
+      if (text[this.bubbleCount] == "The End") {
+        console.log("Start screen sollte kommen ? ");
+        this.scene.scene.start("startScreen");
+      }
+    }
+  }
+
+  clearInventory() {
+    var itembox = document.getElementById("inventar");
+    itembox.innerHTML = "";
   }
 }

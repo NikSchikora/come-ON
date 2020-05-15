@@ -87,9 +87,6 @@ export default class MainScene extends Phaser.Scene {
 
     const DHBW = map.findObject("PersonObject", (obj) => obj.name === "DHBW");
 
-    console.log(DHBW);
-
-    console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
     if (this.player == null) {
       this.player = new Player(
         this,
@@ -125,8 +122,6 @@ export default class MainScene extends Phaser.Scene {
 
     this.setCounter();
     this.setInventar();
-
-    // console.log(this.player.x + ":" + this.player.y);
   }
 
   update() {
@@ -138,21 +133,24 @@ export default class MainScene extends Phaser.Scene {
     if (enterKey.isDown) {
       // this.scene.start("indoor");
       this.player.openDoor(this);
-      console.log("lets go inside");
     }
   }
 
   setCounter() {
-    console.log("counter ahoi!");
-    var counter = this.loader.missioncounter;
+    var counter = this.player.completedMissions.length;
     var counterbox = document.getElementById("counterbox");
     var counternumber = document.getElementById("counter");
     counternumber.innerHTML = counter;
     counterbox.style.visibility = "visible";
   }
 
+  setCurentCounter() {
+    var counter = this.player.completedMissions.length;
+    var counternumber = document.getElementById("counter");
+    counternumber.innerHTML = counter;
+  }
+
   setInventar() {
-    console.log("inventar ahoi!");
     var inventarbox = document.getElementById("inventarbox");
     inventarbox.style.visibility = "visible";
   }

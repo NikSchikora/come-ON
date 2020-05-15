@@ -35,11 +35,9 @@ export default class MissionLoader {
         mission + "Sprite",
         "missions/" + mission + "/sprite.png"
       );
-      console.log("Loaded assets for mission " + mission + "!");
     }, this);
     //Load NPCS from array
     npcs.forEach(function iterateNPCS(npc) {
-      console.log("Loaded npc for mission " + npc + "!");
       //Load NPC-Data
       this.scene.load.json(npc + "Data", "npcs/" + npc + "/" + npc + ".json");
       //Load Sprite-Data
@@ -52,7 +50,6 @@ export default class MissionLoader {
       let data = this.scene.cache.json.get(npc + "Data");
       let char = new NPC(this.scene, data);
       this.npcList.push(char);
-      console.log(char);
     }, this);
   }
 
