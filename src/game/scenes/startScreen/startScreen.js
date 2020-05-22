@@ -7,7 +7,7 @@ export default class StartScreen extends Phaser.Scene {
     this.load.image("bg", "startScene/bgAdjusted.png");
     this.load.image("logo", "startScene/titelbild_groesser.png");
     this.load.image("enter", "startScene/press_enter.png");
-    // this.load.audio("startMusic", "startScene/Procession.mp3");
+    this.load.audio("startMusic", "startScene/Procession.mp3");
   }
 
   create() {
@@ -16,17 +16,17 @@ export default class StartScreen extends Phaser.Scene {
     this.add.image(centerX, centerY, "bg");
     this.add.image(centerX + 25, centerY - 130, "logo");
 
-    // this.sfx = this.sound.add("startMusic", {
-    //   mute: false,
-    //   volume: 0.1,
-    //   rate: 1,
-    //   detune: 0,
-    //   seek: 0,
-    //   loop: true,
-    //   delay: 0,
-    // });
+    this.sfx = this.sound.add("startMusic", {
+      mute: false,
+      volume: 0.1,
+      rate: 1,
+      detune: 0,
+      seek: 0,
+      loop: true,
+      delay: 0,
+    });
 
-    // this.sfx.play();
+    this.sfx.play();
 
     let enter = this.add
       .image(centerX, centerY + 180, "enter")
@@ -54,7 +54,7 @@ export default class StartScreen extends Phaser.Scene {
     if (enterKey.isDown) {
       clearInterval(blinkingInterval);
       this.scene.start("playerSelector");
-      // this.sfx.stop();
+      this.sfx.stop();
     }
   }
 }
