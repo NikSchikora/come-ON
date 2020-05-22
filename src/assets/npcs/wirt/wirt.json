@@ -1,7 +1,7 @@
 {
   "name": "wirt",
   "x": 1933,
-  "y": 2204,
+  "y": 2304,
   "sprite": "npcs/wirt/wirt.png",
   "mission": "wirtMission",
   "dialogue": {
@@ -12,7 +12,7 @@
       "Und Sie? Sie schein' ein Student zu sey. Was treibt sie in die Gegend? Woin Sie a Bier?"
     ],
     "during": [
-      "Wolln Sie nun oans?"
+      "Kochen mist ma kenna."
     ],
     "complete": [
       "Wos zeigen Sie mir da? Oa Rezeptbiachl!",
