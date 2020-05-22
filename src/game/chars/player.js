@@ -1,7 +1,7 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
 import Dialogue from "../dialogues/dialogues.js";
-import Indoor from "../scenes/IndoorScene.js";
+// import Indoor from "../scenes/IndoorScene.js";
 
 // let interactionX, interactionY;
 export default class Player {
