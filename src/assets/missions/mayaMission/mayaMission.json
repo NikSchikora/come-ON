@@ -3,7 +3,7 @@
     "version": "0.1",
     "sequence": ["intro", "during", "complete"],
     "respondingChar": {
-    "name": "Maya",
+    "name": "maya",
     "positionX": 250,
     "positionY": 250,
     "charPath": "npcs/maya/maya.png",

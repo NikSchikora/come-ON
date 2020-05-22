@@ -3,7 +3,7 @@
   "version": "0.1",
   "sequence": ["intro", "during", "complete"],
   "respondingChar": {
-    "name": "Esch",
+    "name": "esch",
     "positionX": 300,
     "positionY": 300,
     "charPath": "assets/npc/esch/esch.png",

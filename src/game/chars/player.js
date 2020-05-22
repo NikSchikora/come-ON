@@ -111,7 +111,7 @@ export default class Player {
           this.activeMission.nextSequence();
         }
       }
-      if (this.completedMissions.length < 3) {
+      if (this.completedMissions.length < 5) {
         this.scene.loader.npcList.forEach(function (iteration) {
           if (this.getDistanceSquared(iteration.sprite) <= 500) {
             let ms = iteration.data.mission;
@@ -228,7 +228,7 @@ export default class Player {
         "Dalma Balogh, Katharina Barth, Julia Henschel, Kristin Zenger und last but not least Niklas Schikora",
         "Ganz tolle Studenten sind das!",
         "Vielleicht kannst du denen mal danke sagen.",
-        "Die müssten auch hier in der DHBW sein....",
+        "Die müssten auch hier in der DHBW sein.... Die kannst du jetzt übrigens mit Enter betreten, wenn du hier draußen fertig bist. Dann beginnt der Unterricht.",
         "Bis bald!",
         "The End"
       ];
@@ -255,15 +255,15 @@ export default class Player {
         }
       }
     }
-    if (this.completedMissions.length == 3) {
+    if (this.completedMissions.length == 5) {
       if (!this.inDoalogue) {
         setTimeout(this.runDialogue("credits"), 5000, this);
       }
       console.log(this.bubbleCount);
       console.log(text[this.bubbleCount]);
       if (text[this.bubbleCount] == "The End") {
-        console.log("Start screen sollte kommen ? ");
-        this.scene.scene.start("startScreen");
+        // console.log("Start screen sollte kommen ? ");
+        // this.scene.scene.start("startScreen");
       }
     }
   }
