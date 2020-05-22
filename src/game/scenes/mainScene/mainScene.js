@@ -130,7 +130,7 @@ export default class MainScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.ENTER
     );
     this.player.update();
-    if (enterKey.isDown) {
+    if (enterKey.isDown && document.getElementById("counter").innerHTML == 5) {
       this.scene.start("indoor");
       this.player.openDoor(this);
     }
