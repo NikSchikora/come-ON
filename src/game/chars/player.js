@@ -4,6 +4,9 @@ import Dialogue from "../dialogues/dialogues.js";
 // import Indoor from "../scenes/IndoorScene.js";
 
 // let interactionX, interactionY;
+
+let creditDialogue = false;
+
 export default class Player {
   constructor(scene, x, y, interactionX, interactionY) {
     this.scene = scene;
@@ -111,7 +114,7 @@ export default class Player {
           this.activeMission.nextSequence();
         }
       }
-      if (this.completedMissions.length < 5) {
+      if (this.completedMissions.length < 6) {
         this.scene.loader.npcList.forEach(function (iteration) {
           if (this.getDistanceSquared(iteration.sprite) <= 500) {
             let ms = iteration.data.mission;
@@ -144,7 +147,9 @@ export default class Player {
           }
         }, this);
       } else {
-        this.runDialogue("credits");
+        if (!creditDialogue) {
+          this.runDialogue("credits");
+        }
       }
     }
   }
@@ -218,7 +223,7 @@ export default class Player {
         "Jetzt kann die Uni wiedereröffnen! Fantastische Arbeit! Das müssen wir feiern.",
         "Eine solche Leistung bleibt natürlich nicht ungeehrt.",
         "Neben der Tatsache, dass du Teil des Spie... Teil dieser Welt sein darfst, bekommst du...",
-        "ein...MINI HANUTA!!!!",
+        "KLEE: ein...MINI HANUTA!!!!",
         "Oh. Tut mir leid. Da hat Professor Klee gerade reingerufen...der liebt einfach diese Mini Hanutas. HAHAHA",
         "Was du als Belohnung bekommst. überlege ich mir auf jeden Fall noch *vielleicht gibts ja eine Eherntafel...die würde sich bestimmt schickt im Eingang machen*",
         "MIRTH: *gib mal das Telefon her, Wester....Hallo? Hört man mich?",
@@ -230,7 +235,7 @@ export default class Player {
         "Vielleicht kannst du denen mal danke sagen.",
         "Die müssten auch hier in der DHBW sein.... Die kannst du jetzt übrigens mit Enter betreten, wenn du hier draußen fertig bist. Dann beginnt der Unterricht.",
         "Bis bald!",
-        "The End"
+        "The End",
       ];
     }
     if (text != null && text.length > this.bubbleCount) {
@@ -241,6 +246,9 @@ export default class Player {
       );
       this.bubbleCount++;
     } else {
+      if (name == "credits") {
+        creditDialogue = true;
+      }
       this.inDoalogue = false;
       this.bubbleCount = 0;
       if (this.activeMission != null) {
@@ -253,17 +261,6 @@ export default class Player {
           this.activeMission = null;
           this.clearInventory();
         }
-      }
-    }
-    if (this.completedMissions.length == 5) {
-      if (!this.inDoalogue) {
-        setTimeout(this.runDialogue("credits"), 5000, this);
-      }
-      console.log(this.bubbleCount);
-      console.log(text[this.bubbleCount]);
-      if (text[this.bubbleCount] == "The End") {
-        // console.log("Start screen sollte kommen ? ");
-        // this.scene.scene.start("startScreen");
       }
     }
   }
