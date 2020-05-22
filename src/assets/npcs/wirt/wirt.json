@@ -1,7 +1,7 @@
 {
   "name": "wirt",
-  "x": 1673,
-  "y": 2112,
+  "x": 1933,
+  "y": 2204,
   "sprite": "npcs/wirt/wirt.png",
   "mission": "wirtMission",
   "dialogue": {
