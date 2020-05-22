@@ -1,7 +1,7 @@
 import Phaser from "../engine/phaser.js";
 import Mission from "../mission/mission.js";
 import Dialogue from "../dialogues/dialogues.js";
-// import Indoor from "../scenes/IndoorScene.js";
+import Indoor from "../scenes/IndoorScene.js";
 
 // let interactionX, interactionY;
 export default class Player {
@@ -225,12 +225,12 @@ export default class Player {
         "Es scheint als wäre nun eine gute Stichprobe für meine Erhebungen verfügbar.",
         "Also vielen Dank. Du bist ein wahrer Held! Ein DHBW-Held!",
         "Im Hintergrund halfen dir übrigens einige fleißige Hände....",
-        "Dalma Balogh, Katharina Barth, Julia Henschel, Kristin Zeger und last but not least Niklas Schikora",
+        "Dalma Balogh, Katharina Barth, Julia Henschel, Kristin Zenger und last but not least Niklas Schikora",
         "Ganz tolle Studenten sind das!",
         "Vielleicht kannst du denen mal danke sagen.",
         "Die müssten auch hier in der DHBW sein....",
         "Bis bald!",
-        "The End",
+        "The End"
       ];
     }
     if (text.length > this.bubbleCount) {

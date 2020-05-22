@@ -131,7 +131,7 @@ export default class MainScene extends Phaser.Scene {
     );
     this.player.update();
     if (enterKey.isDown) {
-      // this.scene.start("indoor");
+      this.scene.start("indoor");
       this.player.openDoor(this);
     }
   }

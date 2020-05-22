@@ -19,21 +19,9 @@ export default class Indoor extends Phaser.Scene {
     this.loader.preload();
     this.npcs = [];
 
-    // this.load.audio("mainMusic", "startScene/No_Good_Right.mp3");
   }
 
   create() {
-    // this.sfx2 = this.sound.add("mainMusic", {
-    //   mute: false,
-    //   volume: 0.1,
-    //   rate: 1,
-    //   detune: 0,
-    //   seek: 0,
-    //   loop: true,
-    //   delay: 0,
-    // });
-
-    // this.sfx2.play();
 
     this.cameras.main.roundPixels = true;
 
