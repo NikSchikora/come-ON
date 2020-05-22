@@ -130,7 +130,7 @@ export default class MainScene extends Phaser.Scene {
       Phaser.Input.Keyboard.KeyCodes.ENTER
     );
     this.player.update();
-    if (enterKey.isDown && document.getElementById("counter").innerHTML == 6) {
+    if (enterKey.isDown && document.getElementById("counter").innerHTML == 0) {
       this.scene.start("indoor");
       this.player.openDoor(this);
     }
@@ -145,7 +145,7 @@ export default class MainScene extends Phaser.Scene {
   }
 
   setCurentCounter() {
-    var counter = this.player.completedMissions.length;
+    var counter = this.player.completedMissions.length ;
     var counternumber = document.getElementById("counter");
     counternumber.innerHTML = counter;
   }

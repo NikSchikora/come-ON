@@ -4,7 +4,7 @@ import MissionLoader from "../../mission/missionLoader.js";
 
 export default class Indoor extends Phaser.Scene {
   init(data) {
-    this.player = data.player;
+    this.playerSprite = data.player;
   }
   preload() {
     this.load.spritesheet("player", "mainScene/" + this.playerSprite + ".png", {
@@ -65,9 +65,17 @@ export default class Indoor extends Phaser.Scene {
     console.log("here ist spawnpoint: " + spawnPoint);
 
     console.log("spawn: " + spawnPoint.x + ":" + spawnPoint.y);
+    // if (this.player == null) {
+      this.player = new Player(
+        this,
+        spawnPoint.x,
+        spawnPoint.y,
+        0,
+        0
+      );
+    // }
     console.log(this.player);
-    this.player.body.x = spawnPoint.x;
-    this.player.body.y = spawnPoint.y;
+   
 
     const camera = this.cameras.main;
     camera.startFollow(this.player.sprite);
@@ -80,23 +88,19 @@ export default class Indoor extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, tables2);
     // this.physics.add.collider(this.player.sprite, firstBorder);
     this.physics.add.collider(this.player.sprite, seats);
-    // if (this.player == null) {
-    //   this.player = new Player(
-    //     this,
-    //     spawnPoint.x,
-    //     spawnPoint.y,
-    //     0,
-    //     0
-    //   );
-    // }
+    
     this.physics.add.collider(this.player.sprite, deko1);
     this.physics.add.collider(this.player.sprite, deko2);
     this.physics.add.collider(this.player.sprite, shelves);
+
+    // this.player.body.x = spawnPoint.x;
+    // this.player.body.y = spawnPoint.y;
 
     // this.loader.create();
 
     // this.setCounter();
     // this.setInventar();
+    this.setCurentCounter();
   }
 
   update() {
@@ -109,5 +113,10 @@ export default class Indoor extends Phaser.Scene {
       this.player.closeDoor(this);
       console.log("lets go outside");
     }
+  }
+
+  setCurentCounter() {
+    var counternumber = document.getElementById("counter");
+    counternumber.innerHTML = "Danke fürs Spielen!";
   }
 }
