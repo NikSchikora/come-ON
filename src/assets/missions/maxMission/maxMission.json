@@ -1,7 +1,7 @@
 {
   "name": "maxMission",
   "version": "0.1",
-  "sequence": ["intro", "middle", "complete"],
+  "sequence": ["intro", "during", "complete"],
   "respondingChar": {
     "name": "max",
     "positionX": 250,

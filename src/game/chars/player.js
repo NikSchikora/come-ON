@@ -233,7 +233,7 @@ export default class Player {
         "The End",
       ];
     }
-    if (text.length > this.bubbleCount) {
+    if (text != null && text.length > this.bubbleCount) {
       this.lastBubble = this.speechManager.createSpeechBubble(
         this.sprite.x,
         this.sprite.y,
