@@ -80,6 +80,15 @@ export default class Indoor extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, tables2);
     // this.physics.add.collider(this.player.sprite, firstBorder);
     this.physics.add.collider(this.player.sprite, seats);
+    // if (this.player == null) {
+    //   this.player = new Player(
+    //     this,
+    //     spawnPoint.x,
+    //     spawnPoint.y,
+    //     0,
+    //     0
+    //   );
+    // }
     this.physics.add.collider(this.player.sprite, deko1);
     this.physics.add.collider(this.player.sprite, deko2);
     this.physics.add.collider(this.player.sprite, shelves);
